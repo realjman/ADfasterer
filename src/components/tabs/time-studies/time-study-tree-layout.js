@@ -58,7 +58,7 @@ export class TimeStudyTreeLayout {
     this.rows = [
       normalRow(                       null,   TS(11),   null                         ),
       normalRow(                           TS(21), TS(22)                             ),
-      normalRow(                   null, TS(31), TS(32), TS(33)                       )
+      normalRow(                   TS(181), TS(31), TS(32), TS(33)                       )
     ];
 
     if (type === STUDY_TREE_LAYOUT_TYPE.ALTERNATIVE_62 || type === STUDY_TREE_LAYOUT_TYPE.ALTERNATIVE_62_181 ||
@@ -92,13 +92,12 @@ export class TimeStudyTreeLayout {
       type === STUDY_TREE_LAYOUT_TYPE.ALTERNATIVE_TRIAD_STUDIES) {
       this.rows.push(
         normalRow(                         null, TS(171),  EC(2)                        ),
-        normalRow(                        EC(1), TS(181),  EC(3)                        )
+        normalRow(                        EC(1), null,  EC(3)                        )
       );
     } else {
       this.rows.push(
         normalRow(                               TS(171)                                ),
         normalRow(                         EC(1), EC(2), EC(3)                          ),
-        normalRow(                               TS(181)                                )
       );
     }
 
