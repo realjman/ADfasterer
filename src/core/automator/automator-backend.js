@@ -386,7 +386,7 @@ export const AutomatorScroller = {
 };
 
 export const AutomatorBackend = {
-  MAX_COMMANDS_PER_UPDATE: 100,
+  MAX_COMMANDS_PER_UPDATE: 1000,
   hasJustCompleted: false,
   _scripts: [],
 

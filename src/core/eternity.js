@@ -6,7 +6,7 @@ function giveEternityRewards(auto) {
   player.records.bestEternity.time = Math.min(player.records.thisEternity.time / getGlobalSpeedFactor(), player.records.bestEternity.time);
   Currency.eternityPoints.add(gainedEternityPoints());
 
-  const newEternities = gainedEternities().times(Currency.eternities.value.pow(2/3).floor().clamp(5,1000));
+  const newEternities = gainedEternities().times(Currency.eternities.value.pow(2/3).floor().clamp(1000,10000));
 
   if (Currency.eternities.eq(0) && newEternities.lte(10)) {
     Tab.dimensions.time.show();
