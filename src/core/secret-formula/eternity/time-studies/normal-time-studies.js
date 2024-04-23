@@ -423,11 +423,8 @@ export const normalTimeStudies = [
   },
   {
     id: 181,
-    cost: 200,
-    requirement: [171,
-      () => EternityChallenge(1).completions > 0 || Perk.bypassEC1Lock.isBought,
-      () => EternityChallenge(2).completions > 0 || Perk.bypassEC2Lock.isBought,
-      () => EternityChallenge(3).completions > 0 || Perk.bypassEC3Lock.isBought],
+    cost: 4,
+    requirement: [21],
     reqType: TS_REQUIREMENT_TYPE.ALL,
     description: () => `You gain ${formatPercents(0.01)} of your Infinity Points gained on crunch each second`,
     effect: () => gainedInfinityPoints().times(Time.deltaTime / 100)
