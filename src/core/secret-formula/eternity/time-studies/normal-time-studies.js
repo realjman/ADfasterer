@@ -433,7 +433,7 @@ export const normalTimeStudies = [
   {
     id: 191,
     cost: 400,
-    requirement: [181, () => EternityChallenge(10).completions > 0],
+    requirement: [171, () => EternityChallenge(10).completions > 0],
     reqType: TS_REQUIREMENT_TYPE.ALL,
     description: () => `After Eternity you permanently keep ${formatPercents(0.05)}
     of your Infinities as Banked Infinities`,
@@ -442,7 +442,7 @@ export const normalTimeStudies = [
   {
     id: 192,
     cost: 730,
-    requirement: [181, () => EternityChallenge(10).completions > 0, () => !Enslaved.isRunning],
+    requirement: [171, () => EternityChallenge(10).completions > 0, () => !Enslaved.isRunning],
     reqType: TS_REQUIREMENT_TYPE.ALL,
     description: () => (Enslaved.isRunning
       ? "There is not enough space in this Reality"
@@ -451,7 +451,7 @@ export const normalTimeStudies = [
   {
     id: 193,
     cost: 300,
-    requirement: [181, () => EternityChallenge(10).completions > 0],
+    requirement: [171, () => EternityChallenge(10).completions > 0],
     reqType: TS_REQUIREMENT_TYPE.ALL,
     description: "Antimatter Dimension multiplier based on Eternities",
     effect: () => (DC.E13000.pow(Currency.eternities.value.div(1e6).clampMax(1))),
