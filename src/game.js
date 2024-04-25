@@ -10,6 +10,7 @@ import { Cloud } from "./core/storage";
 import { supportedBrowsers } from "./supported-browsers";
 
 import Payments from "./core/payments";
+import { Achievement } from "./core/globals";
 
 if (GlobalErrorHandler.handled) {
   throw new Error("Initialization failed");
@@ -78,6 +79,9 @@ export function breakInfinity() {
   for (const autobuyer of Autobuyers.all) {
     if (autobuyer.data.interval !== undefined) autobuyer.maxIntervalForFree();
   }
+
+  Achievement(108).unlock();
+  Achievement(138).unlock();
   // There's a potential migration edge case involving already-maxed autobuyers; this should give the achievement
   Achievement(61).tryUnlock();
   player.break = !player.break;
