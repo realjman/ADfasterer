@@ -41,7 +41,6 @@ TimeStudy.allConnections = (function() {
 
     [TS(31), TS(41)],
     [TS(32), TS(42)],
-    [TS(33), TS(43)],
 
     [TS(41), TS(51)],
     [TS(42), TS(51)],
