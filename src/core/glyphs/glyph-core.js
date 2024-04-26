@@ -65,8 +65,8 @@ export const Glyphs = {
   },
   get activeSlotCount() {
     if (Pelle.isDoomed) {
-      if (PelleRifts.vacuum.milestones[0].canBeApplied) return 1;
-      return 0;
+      if (PelleRifts.vacuum.milestones[0].canBeApplied) return 5;
+      return 3;
     }
     return 3 + this.unequipped.length + Effects.sum(RealityUpgrade(9), RealityUpgrade(24));
   },
