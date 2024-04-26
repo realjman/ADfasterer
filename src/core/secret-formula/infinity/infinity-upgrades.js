@@ -145,7 +145,7 @@ export const infinityUpgrades = {
     cost: 7,
     checkRequirement: () => InfinityUpgrade.unspentIPMult.isBought,
     description: "Increase Dimension Boost multiplier",
-    effect: () => 2.5,
+    effect: () => 5,
     formatEffect: () => `${formatX(2, 0, 1)} ➜ ${formatX(5, 0, 1)}`,
     charged: {
       description: "Dimension Boost multiplier gains a power effect based on Teresa level",
