@@ -80,6 +80,7 @@ export function breakInfinity() {
     if (autobuyer.data.interval !== undefined) autobuyer.maxIntervalForFree();
   }
 
+  Achievement(43).unlock();
   Achievement(108).unlock();
   Achievement(138).unlock();
   // There's a potential migration edge case involving already-maxed autobuyers; this should give the achievement
