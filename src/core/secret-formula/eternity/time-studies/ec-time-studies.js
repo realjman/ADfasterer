@@ -40,7 +40,7 @@ export const ecTimeStudies = [
   {
     id: 4,
     cost: 70,
-    requirement: [143],
+    requirement: [151],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
       resource: "Infinities",
@@ -64,7 +64,7 @@ export const ecTimeStudies = [
   {
     id: 6,
     cost: 85,
-    requirement: [121],
+    requirement: [61],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
       resource: "Replicanti Galaxies",
@@ -88,7 +88,7 @@ export const ecTimeStudies = [
   {
     id: 8,
     cost: 115,
-    requirement: [123],
+    requirement: [111],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
       resource: "Infinity Points",
