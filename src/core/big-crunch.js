@@ -133,6 +133,9 @@ export function bigCrunchResetValues(enteringAntimatterChallenge) {
   if (TimeStudy(33).isBought && !Pelle.isDoomed) {
     remainingGalaxies += Math.floor(currentReplicantiGalaxies / 2);
   }
+  if (TimeStudy(43).isBought && !Pelle.isDoomed) {
+    remainingGalaxies = currentReplicantiGalaxies
+  }
 
   if (PelleUpgrade.replicantiGalaxyNoReset.canBeApplied) {
     remainingGalaxies = currentReplicantiGalaxies;
