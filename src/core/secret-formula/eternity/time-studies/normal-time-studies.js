@@ -116,6 +116,13 @@ export const normalTimeStudies = [
     effect: 52
   },
   {
+    id: 43,
+    cost: 3,
+    requirement: [33],
+    reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
+    description: () => `You keep all of your Replicanti Galaxies on Infinity`
+  },
+  {
     id: 51,
     cost: 3,
     requirement: [41, 42],
