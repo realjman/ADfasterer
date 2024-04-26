@@ -52,7 +52,7 @@ export const infinityChallenges = [
       produce less (${formatPow(0.25, 2, 2)}).`,
     goal: DC.E13000,
     isQuickResettable: true,
-    effect: 0.25,
+    effect: 0.95,
     reward: {
       description: () => `All Antimatter Dimension multipliers become multiplier${formatPow(1.05, 2, 2)}`,
       effect: 1.05
@@ -64,7 +64,7 @@ export const infinityChallenges = [
     description:
       `buying Antimatter Dimensions 1-4 causes all cheaper AD costs to increase.
       Buying Antimatter Dimensions 5-8 causes all more expensive AD costs to increase.`,
-    goal: DC.E16500,
+    goal: DC.E2,
     isQuickResettable: true,
     reward: {
       description: () =>
