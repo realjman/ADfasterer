@@ -49,7 +49,7 @@ export const infinityChallenges = [
     id: 4,
     description: () =>
       `only the latest bought Antimatter Dimension's production is normal. All other Antimatter Dimensions
-      produce less (${formatPow(0.25, 2, 2)}).`,
+      produce less (${formatPow(0.95, 2, 2)}).`,
     goal: DC.E13000,
     isQuickResettable: true,
     effect: 0.95,
