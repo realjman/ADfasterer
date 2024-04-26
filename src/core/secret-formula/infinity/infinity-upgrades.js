@@ -104,7 +104,7 @@ export const infinityUpgrades = {
     id: "galaxyBoost",
     cost: 2,
     checkRequirement: () => InfinityUpgrade.dim45mult.isBought,
-    description: "All Galaxies are twice as strong",
+    description: "Galaxy strength is quintupled",
     effect: 5,
     charged: {
       description: "All Galaxies are stronger based on Teresa level",
