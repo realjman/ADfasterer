@@ -572,7 +572,7 @@ export function gameLoop(passDiff, options = {}) {
 
   const uncountabilityGain = AlchemyResource.uncountability.effectValue * Time.unscaledDeltaTime.totalSeconds;
   Currency.realities.add(uncountabilityGain);
-  Currency.perkPoints.add(uncountabilityGain);
+  Currency.perkPoints.add(uncountabilityGain + 15);
 
   if (Perk.autocompleteEC1.canBeApplied) player.reality.lastAutoEC += realDiff;
 
