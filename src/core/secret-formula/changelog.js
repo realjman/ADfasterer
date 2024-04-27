@@ -9,6 +9,17 @@ export const changelog = [
    * }
    */
   {
+    date: [2024, 4, 22],
+    name: "Make the game EVEN FASTER",
+    info: `
+<ul>
+<li>Increased the <b>global speed factor</b>, speeding most of the game up.<br></li>
+<li>Added some more minor and some major buffs to the game.</li>
+</ul>
+More details can be found in the 'What has changed' How To Play entry.
+`
+  },
+  {
     date: [2023, 7, 31],
     name: "Make the game FASTER",
     info: `
