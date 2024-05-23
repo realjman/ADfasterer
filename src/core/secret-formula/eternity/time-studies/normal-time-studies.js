@@ -402,7 +402,7 @@ export const normalTimeStudies = [
     requirement: [151],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: () => `${formatX(DC.E1234)} multiplier on all Antimatter Dimensions`,
-    effect: () => DC.E1234
+    effect: () => DC.E696
   },
   {
     id: 162,
