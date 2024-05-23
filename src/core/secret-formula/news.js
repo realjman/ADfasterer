@@ -7315,5 +7315,17 @@ export const news = [
   {
     id: "ai997",
     get text() { return `The intergalactic antimatter trade has been severely disrupted, trading entire galaxies for the occasional paperclip. Cargo stands are no longer used. Oddly enough, the entire dimension has become a dumping ground for discarded plastic and other useless garbage. It's almost as if the rest of the multiverse isn't producing enough good  antiparticles to feed the growing population. Unfortunately, the situation is forcing the entire multiverse to scramble to find ways to meet the growing needs of the antimatter-eating  dev, who claims to have over ${format(Number.MAX_VALUE, 2)} specimens left to collect.`; }
-  }
+  },
+  {
+    id: "ai998",
+    text: "'coloredbelt is fat' - microwave"
+  },
+  {
+    id: "ai999",
+    text: "'microwave is fat' - coloredbelt"
+  },
+  {
+    id: "ai1000",
+    text: "'noob' - luna"
+  },
 ];

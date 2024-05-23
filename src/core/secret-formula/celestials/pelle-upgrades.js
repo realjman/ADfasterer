@@ -38,7 +38,7 @@ export const pelleUpgrades = {
     id: "glyphLevels",
     description: "Increase the Glyph level allowed in Pelle",
     cost: [30, 1e3, 25, 1e15],
-    effect: x => Math.floor(((3 * (x + 1)) - 2) ** 1.6),
+    effect: x => Math.floor(((3 * (x + 3)) - 2) ** 1.8),
     formatEffect: x => formatInt(x),
     cap: 26
   }),
@@ -54,7 +54,7 @@ export const pelleUpgrades = {
     id: "galaxyPower",
     description: "Multiply Galaxy power",
     cost: [1000, 1e3, 10, 1e30],
-    effect: x => 1 + x / 50,
+    effect: x => 1 + x / 48,
     formatEffect: x => formatX(x, 2, 2),
     cap: 9
   }),
