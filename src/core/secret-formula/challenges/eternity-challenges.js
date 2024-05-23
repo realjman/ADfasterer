@@ -8,7 +8,7 @@ export const eternityChallenges = [
   {
     id: 1,
     description: "Time Dimensions are disabled.",
-    goal: DC.E1800,
+    goal: DC.E1200,
     goalIncrease: DC.E200,
     reward: {
       description: "Time Dimension multiplier based on time spent this Eternity",
@@ -22,9 +22,9 @@ export const eternityChallenges = [
   {
     id: 2,
     description: "Infinity Dimensions are disabled.",
-    goal: DC.E975,
-    pelleGoal: DC.E1750,
-    goalIncrease: DC.E175,
+    goal: DC.E575,
+    pelleGoal: DC.E1250,
+    goalIncrease: DC.E125,
     reward: {
       description: "1st Infinity Dimension multiplier based on Infinity Power",
       effect: completions => Currency.infinityPower.value.pow(1.5 / (700 - completions * 100)).clampMin(1),
@@ -35,9 +35,9 @@ export const eternityChallenges = [
   {
     id: 3,
     description: "Antimatter Dimensions 5-8 don't produce anything. Dimensional Sacrifice is disabled.",
-    goal: DC.E600,
-    pelleGoal: DC.E925,
-    goalIncrease: DC.E75,
+    goal: DC.E300,
+    pelleGoal: DC.E425,
+    goalIncrease: DC.E50,
     reward: {
       description: () => `Increase the multiplier for buying ${formatInt(10)} Antimatter Dimensions`,
       effect: completions => completions * 0.72,
@@ -48,8 +48,8 @@ export const eternityChallenges = [
     id: 4,
     description: `all Infinity multipliers and generators are disabled. The goal must be reached within a certain
       number of Infinities or else you will fail the Challenge.`,
-    goal: DC.E2750,
-    goalIncrease: DC.E550,
+    goal: DC.E2250,
+    goalIncrease: DC.E250,
     restriction: completions => Math.max(16 - 4 * completions, 0),
     checkRestriction: restriction => Currency.infinities.lte(restriction),
     formatRestriction: restriction => (restriction === 0
@@ -67,9 +67,9 @@ export const eternityChallenges = [
     id: 5,
     description: () => `Antimatter Galaxy cost increase scaling starts immediately (normally at ${formatInt(100)}
       Galaxies). Dimension Boost costs scaling is massively increased.`,
-    goal: DC.E750,
-    pelleGoal: DC.E1400,
-    goalIncrease: DC.E400,
+    goal: DC.E550,
+    pelleGoal: DC.E1100,
+    goalIncrease: DC.E300,
     reward: {
       description: "Distant Galaxy cost scaling starts later",
       effect: completions => completions * 5,
@@ -84,9 +84,9 @@ export const eternityChallenges = [
       return "you cannot gain Antimatter Galaxies normally. The cost of upgrading your max Replicanti" +
               " Galaxies is massively reduced.";
     },
-    goal: DC.E850,
-    pelleGoal: DC.E1500,
-    goalIncrease: DC.E250,
+    goal: DC.E550,
+    pelleGoal: DC.E1200,
+    goalIncrease: DC.E150,
     reward: {
       description: "Further reduce Antimatter Dimension cost multiplier growth",
       effect: completions => completions * 0.2,
@@ -102,9 +102,9 @@ export const eternityChallenges = [
     description:
       "1st Time Dimensions produce 8th Infinity Dimensions and 1st Infinity Dimensions produce " +
       "7th Antimatter Dimensions. Tickspeed also directly applies to Infinity and Time Dimensions.",
-    goal: DC.E2000,
-    pelleGoal: DC.E2700,
-    goalIncrease: DC.E530,
+    goal: DC.E1000,
+    pelleGoal: DC.E1500,
+    goalIncrease: DC.E250,
     effect: () => TimeDimension(1).productionPerSecond,
     reward: {
       description: "1st Time Dimension produces 8th Infinity Dimensions",
@@ -117,8 +117,8 @@ export const eternityChallenges = [
     description: () => `you can only upgrade Infinity Dimensions ${formatInt(50)} times and Replicanti
       upgrades ${formatInt(40)} times. Infinity Dimension and Replicanti upgrade autobuyers are disabled.`,
     goal: DC.E1300,
-    pelleGoal: DC.E2800,
-    goalIncrease: DC.E900,
+    pelleGoal: DC.E2000,
+    goalIncrease: DC.E200,
     reward: {
       description: "Infinity Power strengthens Replicanti Galaxies",
       effect: completions => {
@@ -132,9 +132,9 @@ export const eternityChallenges = [
     id: 9,
     description: () => `you cannot buy Tickspeed upgrades. Infinity Power instead multiplies
       Time Dimensions with greatly reduced effect. ${specialInfinityGlyphDisabledEffectText()}`,
-    goal: DC.E1750,
-    pelleGoal: DC.E2900,
-    goalIncrease: DC.E250,
+    goal: DC.E1250,
+    pelleGoal: DC.E2200,
+    goalIncrease: DC.E150,
     reward: {
       description: "Infinity Dimension multiplier based on Time Shards",
       effect: completions => Currency.timeShards.value.pow(completions * 0.1).clampMin(1),
