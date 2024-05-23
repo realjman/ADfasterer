@@ -38,7 +38,7 @@ export const pelleUpgrades = {
     id: "glyphLevels",
     description: "Increase the Glyph level allowed in Pelle",
     cost: [30, 1e3, 25, 1e15],
-    effect: x => Math.floor(((3 * (x + 3)) - 2) ** 1.8),
+    effect: x => Math.floor(((3 * (x + 2)) - 2) ** 1.8),
     formatEffect: x => formatInt(x),
     cap: 26
   }),
