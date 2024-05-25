@@ -60,5 +60,5 @@ export const eternityUpgrades = {
     ),
     effect: () => (Pelle.isDoomed ? 1 + Time.thisReality.totalDays : Math.max(Time.totalTimePlayed.totalDays, 1)),
     formatEffect: value => formatX(value, 2, 1)
-  }
+  },
 };

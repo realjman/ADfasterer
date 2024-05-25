@@ -432,6 +432,8 @@ export const pelleQuotes = {
       }, {
         text: "You have doomed us all.",
         background: flashCelestial,
+      }, {
+        text: "you suck terribly, you could have done it faster tbh.",
       },
     ],
   },

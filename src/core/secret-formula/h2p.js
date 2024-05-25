@@ -47,6 +47,8 @@ As the mod name, almost all mechanics are speeded up by ${formatX(globalSpeedFac
 To be separated from the in-game speed change mechanic, 'real/game real/game time' means
 this timer doesn't/does count speed up from this mod and doesn't/does count in-game speed change.<br>
 <br>
+This was a hilarious idea from me to make the game even faster, but you should go play the original ADfaster here: https://wyxkk.github.io/ADfaster/<br>
+<br>
 To make the game run normally and still balanced in some way, some mechanics are not speeded up
 ${player.blackHole[0].unlocked||player.records.fullGameCompletions>0?"or speeded up by a lower factor":""}:<br>
 ${player.speedrun.isUnlocked?`
@@ -70,9 +72,6 @@ ${PlayerProgress.eternityUnlocked()||player.records.fullGameCompletions>0?`
 ${player.blackHole[0].unlocked||player.records.fullGameCompletions>0?`
 - Black Hole ticking is still speeded up, but only square-rooted as ${formatX(Math.pow(globalSpeedFactor,1/2))}. Notice that both inactive time and duration are speeded up.<br>
 `:""}
-${Player.automatorUnlocked||player.records.fullGameCompletions>0?`
-- Automator running is not speeded up.<br>
-`:""}
 ${EffarigUnlock.eternity.isUnlocked||player.records.fullGameCompletions>0?`
 - Charging real time doesn't charge ${formatX(globalSpeedFactor)} time.<br>
 `:""}
@@ -94,16 +93,28 @@ ${Achievement(188).isUnlocked||player.records.fullGameCompletions>0?"":
 }
 <br>
 Also, there are some extra buffs to the game.<br>
+${PlayerProgress.infinityUnlocked()||player.records.fullGameCompletions>0?`
+- IC5 is free, literally.<br>
+`:""}
 ${Autobuyer.bigCrunch.hasMaxedInterval||PlayerProgress.eternityUnlocked()?`
 - The infinity generating break infinity upgrade counts the boost from achievement 87 and time study 32.<br>
 ${PlayerProgress.eternityUnlocked()||player.records.fullGameCompletions>0?`
-- You gain a multiplier to eternities gained on eternity based on your current eternities, to a minimal of ${formatX(5)} and a maximal of ${formatX(1000)}.<br>
+- You instantly unlock all eternity milestones.<br>
+- Time Study 181 is moved up to row 3 and costs significantly cheaper and does a 100% generation.<br>
+- You don't have any penalties upon reaching the Active, Passive and Idle split tree.<br>
+- Some more TS buffs.<br>
+- Eternity Challenges are seperately instead of you having to do it to progress except for EC10.<br>
 `:""}
 ${PlayerProgress.realityUnlocked()||player.records.fullGameCompletions>0?`
 - Realities are always simuated +${format(4)}× (additive with other amplify mutipliers).<br>
-- You gain a multiplier to perk points gained on reality based on your current realities, to a maximal of ${formatX(20)}.<br>
+- You gain so much perk points on your first reality that you can buy every single perk upgrades.<br>
+- The Automator is unlocked upon your first Reality and it's ${format(10)} times faster.<br>
+- When you unequip glyphs, the amount of slots it increased is based on the amount of glyphs you equipped. (I know this is heavily unbalanced but this is tend to be a joke project anyways.)<br>
 `:""}
-${PlayerProgress.realityUnlocked()||player.records.fullGameCompletions>0?"":
+${Pelle.isDoomed||player.records.fullGameCompletions>0?`
+- Pelle's buyable 4 is slightly buffed.<br>
+`:""}
+${Pelle.isDoomed||player.records.fullGameCompletions>0?"":
 `More buffs will show here as you reach them.<br>`
 }
 `:"These buffs will show here as you reach them.<br>"

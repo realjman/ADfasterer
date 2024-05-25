@@ -13,8 +13,11 @@ export const changelog = [
     name: "Make the game EVEN FASTER",
     info: `
 <ul>
-<li>Increased the <b>global speed factor</b>, speeding most of the game up.<br></li>
-<li>Added some more minor and some major buffs to the game.</li>
+<li>Increased the <b>global speed factor 3 OoM more</b>, speeding most of the game up more.<br></li>
+<li>Added some more minor and some major buffs to the game. Such as: </li>
+Moved TS181 to an earlier time study and buffed it.<br>
+Instantly unlocks the Automator upon your first Reality.<br>
+Some achievements were automatically unlocked upon Break Infinity due to how fast the game is.
 </ul>
 More details can be found in the 'What has changed' How To Play entry.
 `
