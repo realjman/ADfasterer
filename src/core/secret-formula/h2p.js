@@ -106,7 +106,7 @@ ${PlayerProgress.eternityUnlocked()||player.records.fullGameCompletions>0?`
 - Eternity Challenges are seperately instead of you having to do it to progress except for EC10.<br>
 `:""}
 ${PlayerProgress.realityUnlocked()||player.records.fullGameCompletions>0?`
-- Realities are always simuated +${format(4)}× (additive with other amplify mutipliers).<br>
+- Realities are always simuated +${format(49)}× (additive with other amplify mutipliers).<br>
 - You gain so much perk points on your first reality that you can buy every single perk upgrades.<br>
 - The Automator is unlocked upon your first Reality and it's ${format(10)} times faster.<br>
 - When you unequip glyphs, the amount of slots it increased is based on the amount of glyphs you equipped. (I know this is heavily unbalanced but this is tend to be a joke project anyways.)<br>
