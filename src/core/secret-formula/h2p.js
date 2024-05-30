@@ -109,10 +109,10 @@ ${PlayerProgress.realityUnlocked()||player.records.fullGameCompletions>0?`
 - Realities are always simuated +${format(49)}× (additive with other amplify mutipliers).<br>
 - You gain so much perk points on your first reality that you can buy every single perk upgrades.<br>
 - The Automator is unlocked upon your first Reality and it's ${format(10)} times faster.<br>
-- When you unequip glyphs, the amount of slots it increased is based on the amount of glyphs you equipped. (I know this is heavily unbalanced but this is tend to be a joke project anyways.)<br>
+- Glyph count is now at a range from ${format(6)} to ${format(8)}. (I know this is heavily unbalanced but this is tend to be a joke project anyways.)<br>
 `:""}
 ${Pelle.isDoomed||player.records.fullGameCompletions>0?`
-- Pelle's buyable 4 is slightly buffed.<br>
+- Pelle's buyable 5 is slightly buffed.<br>
 `:""}
 ${Pelle.isDoomed||player.records.fullGameCompletions>0?"":
 `More buffs will show here as you reach them.<br>`
