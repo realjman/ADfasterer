@@ -4,7 +4,7 @@ export const effarigUnlocks = {
   adjuster: {
     id: 0,
     description: "Adjustable Glyph level factor weights",
-    cost: 1e7,
+    cost: 1e4,
     onPurchased: () => {
       Effarig.quotes.unlockWeights.show();
       ui.view.tabs.reality.openGlyphWeights = true;
@@ -14,7 +14,7 @@ export const effarigUnlocks = {
   glyphFilter: {
     id: 1,
     description: "Glyph Filtering",
-    cost: 2e8,
+    cost: 2e4,
     onPurchased: () => {
       Effarig.quotes.unlockGlyphFilter.show();
       player.reality.showSidebarPanel = GLYPH_SIDEBAR_MODE.FILTER_SETTINGS;
@@ -23,7 +23,7 @@ export const effarigUnlocks = {
   setSaves: {
     id: 2,
     description: "Glyph Presets",
-    cost: 3e9,
+    cost: 3e4,
     onPurchased: () => {
       Effarig.quotes.unlockSetSaves.show();
       player.reality.showSidebarPanel = GLYPH_SIDEBAR_MODE.SAVED_SETS;
@@ -32,7 +32,7 @@ export const effarigUnlocks = {
   run: {
     id: 3,
     description: "Effarig's Reality",
-    cost: 5e11,
+    cost: 5e5,
     onPurchased: () => {
       Effarig.quotes.unlockRun.show();
     }
