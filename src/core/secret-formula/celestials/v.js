@@ -181,13 +181,13 @@ export const v = {
       id: 8,
       name: "Shutter Glyph",
       description: value => `Reach a Glyph of level ${formatInt(value)}.`,
-      values: [6500, 7000, 8000, 9000, 10000],
+      values: [6500, 7000, 7500, 8000, 8500],
       condition: () => V.isRunning,
       currentValue: () => gainedGlyphLevel().actualLevel,
       formatRecord: x => formatInt(x),
       shardReduction: tiers => Math.floor(500 * tiers),
-      maxShardReduction: () => 500,
-      perReductionStep: 5,
+      maxShardReduction: () => 1000,
+      perReductionStep: 50,
       mode: V_REDUCTION_MODE.SUBTRACTION,
       isHard: true
     }

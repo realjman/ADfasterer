@@ -44,8 +44,11 @@ export const breakInfinityUpgrades = {
   galaxyBoost: {
     id: "postGalaxy",
     cost: 5e11,
-    description: () => `All Galaxies are ${formatPercents(0.5)} stronger`,
-    effect: 1.5
+    description: () => {
+      if (Pelle.isDoomed) return `All Galaxies are ${formatPercents(1)} stronger`;
+      return `All Galaxies are ${formatPercents(0.5)} stronger`
+    },
+    effect: () => (Pelle.isDoomed ? 2 : 1.5)
   },
   infinitiedMult: {
     id: "infinitiedMult",

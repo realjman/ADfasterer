@@ -84,6 +84,7 @@ ${Laitela.isUnlocked||player.records.fullGameCompletions>0?`
 `:""}
 ${Pelle.isDoomed||player.records.fullGameCompletions>0?`
 - In Doomed Reality, the global speed factor is square-rooted as ${formatX(Math.pow(globalSpeedFactor,1/2))}.<br>
+- Recursion max requirement is extended to ${format("1e6000")}<br>
 `:""}
 ${Achievement(188).isUnlocked||player.records.fullGameCompletions>0?`
 - The ending animation is not speeded up.<br>
@@ -110,8 +111,16 @@ ${PlayerProgress.realityUnlocked()||player.records.fullGameCompletions>0?`
 - You gain so much perk points on your first reality that you can buy every single perk upgrades.<br>
 - The Automator is unlocked upon your first Reality and it's ${format(10)} times faster.<br>
 - Glyph count is now at a range from ${format(6)} to ${format(8)}. (I know this is heavily unbalanced but this is tend to be a joke project anyways.)<br>
+- Teresa's RM pour RM multiplier is heavily boosted.<br>
+- Teresa's Reality reward is also heavily boosted.<br>
+- "Shutter Glyph" is nerfed.<br>
+- Rememberance is buffed.<br>
+- Entropy gain is slightly faster.<br>
+- Game speed during Lai'tela's Reality increases way faster.<br>
 `:""}
 ${Pelle.isDoomed||player.records.fullGameCompletions>0?`
+- Galaxies are boosted during Doomed Reality.<br>
+- Decay is nerfed.<br>
 - Pelle's buyable 5 is slightly buffed.<br>
 `:""}
 ${Pelle.isDoomed||player.records.fullGameCompletions>0?"":

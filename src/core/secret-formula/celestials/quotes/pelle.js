@@ -41,6 +41,8 @@ const usurper =      ["Usurper",       "Deity",         "Monarch"];
 const pride =        ["Pride",         "Deity",         "Monarch"];
 const forgotten =    ["Forgotten",     "Deity",         "Monarch"];
 const paramount =    ["Paramount",     "Deity",         "Monarch"];
+
+const slow =         ["slowpoke",     "noob",         "get better lol"];
 /* eslint-enable no-multi-spaces */
 
 export const pelleQuotes = {
@@ -433,7 +435,7 @@ export const pelleQuotes = {
         text: "You have doomed us all.",
         background: flashCelestial,
       }, {
-        text: "you suck terribly, you could have done it faster tbh.",
+        text: "you suck terribly, you could have done it faster tbh, $1.", 1: slow,
       },
     ],
   },

@@ -104,8 +104,11 @@ export const infinityUpgrades = {
     id: "galaxyBoost",
     cost: 2,
     checkRequirement: () => InfinityUpgrade.dim45mult.isBought,
-    description: "All Galaxies are twice as strong",
-    effect: 2,
+    description: () => {
+      if (Pelle.isDoomed) return "All Galaxies are thrice as strong";
+      return "All Galaxies are twice as strong"
+    },
+    effect: () => (Pelle.isDoomed ? 3 : 2),
     charged: {
       description: "All Galaxies are stronger based on Teresa level",
       effect: () => 2 + Math.sqrt(Ra.pets.teresa.level) / 100,

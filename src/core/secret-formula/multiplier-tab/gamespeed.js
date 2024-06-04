@@ -94,7 +94,7 @@ export const gamespeed = {
   },
   nerfLaitela: {
     name: "Lai'tela's Reality",
-    powValue: () => Math.clampMax(Time.thisRealityRealTime.totalMinutes / 10, 1),
+    powValue: () => Math.clampMax(Time.thisRealityRealTime.totalMinutes / 3, 1),
     isActive: () => Laitela.isRunning,
     icon: MultiplierTabIcons.GENERIC_LAITELA,
   }
