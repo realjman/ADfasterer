@@ -411,6 +411,15 @@ export const migrations = {
         player.reality.automator.constantSortOrder = [...definedConstants];
       }
     },
+    25: player => {
+      // If the player has r146 "Perks of living" achievement we give them the DAB perk automatically
+      if ((player.achievementBits[13] & 32) !== 0 && !player.reality.perks.has(107)) {
+        player.reality.perks.add(107);
+      }
+
+      // This update has a rebalance that assumes the 3rd dilation repeatable is unpurchasable in cel7
+      if (player.celestials.pelle.doomed) player.dilation.rebuyables[3] = 0;
+    }
   },
 
   normalizeTimespans(player) {
