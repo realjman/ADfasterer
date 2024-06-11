@@ -17,7 +17,7 @@ function giveEternityRewards(auto) {
   if (EternityChallenge.isRunning) {
     const challenge = EternityChallenge.current;
     challenge.addCompletion(false);
-    if (Perk.studyECBulk.isBought) {
+    if (Perk.studyECBulk.isBought || !Perk.studyECBulk.isBought) {
       let completionCount = 0;
       while (!challenge.isFullyCompleted && challenge.canBeCompleted) {
         challenge.addCompletion(false);

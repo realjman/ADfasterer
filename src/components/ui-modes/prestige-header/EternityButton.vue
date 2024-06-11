@@ -16,7 +16,7 @@ export default {
       gainedCompletions: 0,
       fullyCompleted: false,
       failedRestriction: undefined,
-      hasMoreCompletions: false,
+      hasMoreCompletions: true,
       nextGoalAt: new Decimal(0),
       canEternity: false,
       eternityGoal: new Decimal(0),
@@ -125,10 +125,6 @@ export default {
       }
 
       if (EternityChallenge.isRunning) {
-        if (!Perk.studyECBulk.isBought) {
-          this.type = EP_BUTTON_DISPLAY_TYPE.CHALLENGE;
-          return;
-        }
         this.type = EP_BUTTON_DISPLAY_TYPE.CHALLENGE_RUPG;
         this.updateChallengeWithRUPG();
         return;

@@ -103,17 +103,10 @@ export class EternityChallengeState extends GameMechanicState {
   get gainedCompletionStatus() {
     const status = {
       gainedCompletions: 0,
-      hasMoreCompletions: false,
+      hasMoreCompletions: true,
       totalCompletions: this.completions,
     };
     if (this.isFullyCompleted) return status;
-    if (!Perk.studyECBulk.isBought) {
-      if (this.canBeCompleted) {
-        ++status.totalCompletions;
-        status.gainedCompletions = 1;
-      }
-      return status;
-    }
 
     let totalCompletions = this.completionsAtIP(player.records.thisEternity.maxIP);
     const maxValidCompletions = this.maxValidCompletions;

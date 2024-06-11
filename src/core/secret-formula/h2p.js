@@ -105,6 +105,7 @@ ${PlayerProgress.eternityUnlocked()||player.records.fullGameCompletions>0?`
 - You don't have any penalties upon reaching the Active, Passive and Idle split tree.<br>
 - Some more TS buffs.<br>
 - Eternity Challenges are seperately instead of you having to do it to progress except for EC10.<br>
+- Instantly unlock bulk ECs.<br>
 `:""}
 ${PlayerProgress.realityUnlocked()||player.records.fullGameCompletions>0?`
 - Realities are always simuated +${format(49)}× (additive with other amplify mutipliers).<br>

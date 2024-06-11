@@ -40,7 +40,7 @@ export default {
         if (Player.isInAntimatterChallenge) {
           setProgress(Currency.antimatter.value, Player.antimatterChallenge.goal, "Percentage to Challenge goal");
         } else if (EternityChallenge.isRunning) {
-          if (Perk.studyECBulk.isBought) {
+          if (Perk.studyECBulk.isBought || !Perk.studyECBulk.isBought) {
             // Note: If the EC is fully complete, this prop doesn't exist
             const goal = EternityChallenge.current.gainedCompletionStatus.nextGoalAt;
             if (goal) {
