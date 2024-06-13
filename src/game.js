@@ -80,6 +80,11 @@ export function breakInfinity() {
     if (autobuyer.data.interval !== undefined) autobuyer.maxIntervalForFree();
   }
 
+  Achievement(23).unlock();
+  Achievement(28).unlock();
+  Achievement(32).unlock();
+  Achievement(43).unlock();
+
   Achievement(43).unlock();
   Achievement(108).unlock();
   Achievement(138).unlock();
