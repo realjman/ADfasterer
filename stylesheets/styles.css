@@ -104,6 +104,8 @@ html {
 
   --color-pelle--base: crimson;
   --color-pelle--secondary: #00bcd4;
+
+  --color-completions: rgb(81, 111, 126);
 }
 
 :root .t-metro,
@@ -9306,18 +9308,18 @@ input.o-automator-block-input {
 
 .c-completions-text_accent {
   font-size: 2.3rem;
-  color: #2196f3;
+  color: var(--color-completions);
 }
 
 .s-base--metro .c-completions-text_accent,
 .t-s6 .c-completions-text_accent,
 .t-s10 .c-completions-text_accent {
-  color: #03a9f4;
+  color: var(--color-completions);
 }
 
 .t-s11 .c-completions-text_accent {
-  color: #fbc21b;
-  text-shadow: 0 0 0.7rem #fbc21b;
+  color: var(--color-completions);
+  text-shadow: 0 0 0.7rem var(--color-completions);
 }
 
 .t-metro .c-completions-text_accent,
@@ -9328,5 +9330,25 @@ input.o-automator-block-input {
 .t-dark .c-completions-text_accent,
 .t-s6 .c-completions-text_accent,
 .t-s10 .c-completions-text_accent {
-  text-shadow: 0 0 0.7rem #03a9f4;
+  text-shadow: 0 0 0.7rem var(--color-completions);
+}
+
+.o-tab-btn--completions {
+  color: var(--color-completions);
+  background-color: var(--color-prestige--accent);
+  border-color: var(--color-completions);
+}
+
+.o-tab-btn--completions:hover {
+  background: var(--color-completions);
+}
+
+.o-tab-btn--completions .o-subtab__tooltip {
+  color: var(--color-completions);
+  background: var(--color-prestige--accent);
+  border-color: var(--color-completions);
+}
+
+.o-tab-btn--completions .o-subtab__tooltip::after {
+  border-top-color: var(--color-completions);
 }
