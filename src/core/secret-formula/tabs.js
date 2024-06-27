@@ -500,6 +500,7 @@ export const tabs = [
   {
     key: "gameCompletions",
     name: "Completions",
+    UIClass: "o-tab-btn--completions",
     hideAt: 3,
     condition: () => player.records.fullGameCompletions > 0,
     id: 11,

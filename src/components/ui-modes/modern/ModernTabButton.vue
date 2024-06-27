@@ -140,6 +140,10 @@ export default {
   border-bottom-width: 0.5rem;
 }
 
+.o-tab-btn--completions::before {
+  background-color: var(--color-completions);
+}
+
 .o-tab-btn--subtab:first-child {
   border-top-left-radius: var(--var-border-radius, 0.5rem);
   border-bottom-left-radius: var(--var-border-radius, 0.5rem);

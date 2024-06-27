@@ -180,6 +180,11 @@ body.t-s12 {
   border-left-color: var(--color-celestials);
 }
 
+.o-tab-btn--completions::after {
+  border-left-color: var(--color-completions);
+}
+
+
 .tab-button.shop {
   background-color: #d9bb26;
 }

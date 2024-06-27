@@ -34,7 +34,7 @@ export default {
     <div class="c-completions-text">
     You completed the game <span class="c-completions-text_accent">{{ format(gameCompletions) }}</span> time(s).
     </div>
-    (That's all you can see here, I have no idea what else to add here.)
+    (That's all you can see here, I have no idea what else to add here. {gci loops real})
   </div>
 </template>
 
