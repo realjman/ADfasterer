@@ -47,6 +47,8 @@ export function startDilatedEternity(auto) {
     eternity(false, auto, { switchingDilation: true });
     return false;
   }
+  Achievement(114).unlock();
+  Achievement(115).unlock();
   Achievement(136).unlock();
   eternity(false, auto, { switchingDilation: true });
   player.dilation.active = true;
@@ -57,7 +59,7 @@ export function startDilatedEternity(auto) {
 const DIL_UPG_NAMES = [
   null, "dtGain", "galaxyThreshold", "tachyonGain", "doubleGalaxies", "tdMultReplicanti",
   "ndMultDT", "ipMultDT", "timeStudySplit", "dilationPenalty", "ttGenerator",
-  "dtGainPelle", "galaxyMultiplier", "tickspeedPower", "galaxyThresholdPelle", "flatDilationMult"
+  "dtGainPelle", "galaxyMultiplier", "tickspeedPower", "galaxyThresholdPelle", "flatDilationMult", "epGen"
 ];
 
 export function buyDilationUpgrade(id, bulk = 1) {

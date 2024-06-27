@@ -5,6 +5,7 @@ import CelestialQuoteHistory from "@/components/CelestialQuoteHistory";
 import CustomizeableTooltip from "@/components/CustomizeableTooltip";
 import GlyphSetPreview from "@/components/GlyphSetPreview";
 import PerkShopUpgradeButton from "./PerkShopUpgradeButton";
+import { DilationUpgrade } from "../../../core/dilation";
 
 export default {
   name: "TeresaTab",
@@ -195,7 +196,7 @@ export default {
           class="c-teresa-unlock"
         >
           <span :class="{ 'o-pelle-disabled': isDoomed }">
-            Every second, you gain {{ formatPercents(0.01) }} of your peaked Eternity Points per minute this Reality.
+            Every second, you gain {{ formatPercents(0.1) }} of your peaked Eternity Points per minute this Reality.
           </span>
         </div>
       </div>

@@ -44,6 +44,10 @@ export default {
           DilationUpgrade.timeStudySplit,
           DilationUpgrade.dilationPenalty
         ],
+        [
+          DilationUpgrade.ttGenerator,
+          DilationUpgrade.epGen,
+        ],
       ];
     },
     // This might be negative due to rift drain, so we need to add "+" iff the value is positive. The actual
@@ -65,9 +69,6 @@ export default {
         DilationUpgrade.flatDilationMult
       ];
     },
-    ttGenerator() {
-      return DilationUpgrade.ttGenerator;
-    },
     baseGalaxyText() {
       return `${formatInt(this.baseGalaxies)} Base`;
     },
@@ -82,7 +83,6 @@ export default {
       const upgradeRows = [];
       upgradeRows.push(...this.upgrades);
       if (this.hasPelleDilationUpgrades) upgradeRows.push(this.pelleUpgrades);
-      upgradeRows.push([this.ttGenerator]);
       return upgradeRows;
     },
   },

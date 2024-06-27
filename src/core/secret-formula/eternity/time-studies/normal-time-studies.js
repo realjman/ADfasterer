@@ -98,6 +98,14 @@ export const normalTimeStudies = [
     description: "You keep half of your Replicanti Galaxies on Infinity"
   },
   {
+    id: 40,
+    cost: 8,
+    requirement: [181],
+    reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
+    description: () => `Divide Time Theorems cost and AM & IP TT cost increment by ${format(100)} (Not studies)`,
+    effect: 100
+  },
+  {
     id: 41,
     cost: 2,
     requirement: [31],
@@ -118,7 +126,7 @@ export const normalTimeStudies = [
   {
     id: 51,
     cost: 2,
-    requirement: [41, 42],
+    requirement: [40, 41, 42],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: () => `You gain ${formatX(1e50)} more Infinity Points`,
     effect: 1e50

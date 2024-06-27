@@ -310,11 +310,11 @@ export const imaginaryUpgrades = [
     cost: 1.6e15,
     formatCost: x => format(x, 1),
     requirement: () => `Reach Reality in Lai'tela's Reality with all Dimensions disabled and
-      at least ${formatInt(4)} empty Glyph slots`,
+      at least ${formatInt(5)} empty Glyph slots`,
     hasFailed: () => !Laitela.isRunning || Laitela.maxAllowedDimension !== 0 ||
-      Glyphs.activeWithoutCompanion.length > 1,
+      Glyphs.activeWithoutCompanion.length > 3,
     checkRequirement: () => Laitela.isRunning && Laitela.maxAllowedDimension === 0 &&
-      Glyphs.activeWithoutCompanion.length <= 1 && TimeStudy.reality.isBought,
+      Glyphs.activeWithoutCompanion.length <= 3 && TimeStudy.reality.isBought,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
     canLock: true,
     lockEvent: "equip another non-Companion Glyph",

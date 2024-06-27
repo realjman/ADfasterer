@@ -6,6 +6,8 @@ export const normalAchievements = [
     name: "You gotta start somewhere",
     description: "Buy a 1st Antimatter Dimension.",
     checkEvent: GAME_EVENT.ACHIEVEMENT_EVENT_OTHER,
+    get reward() { return `Start with ${formatInt(100)} antimatter.`; },
+    effect: 100
   },
   {
     id: 12,
@@ -63,8 +65,8 @@ export const normalAchievements = [
     description: "Go Infinite.",
     checkRequirement: () => true,
     checkEvent: GAME_EVENT.BIG_CRUNCH_BEFORE,
-    get reward() { return `Start with ${formatInt(100)} antimatter.`; },
-    effect: 100
+    get reward() { return `Start with ${formatInt(1000)} antimatter.`; },
+    effect: 1000
   },
   {
     id: 22,
@@ -539,6 +541,7 @@ export const normalAchievements = [
     get description() { return `Complete all ${formatInt(8)} Infinity Challenges.`; },
     checkRequirement: () => InfinityChallenges.completed.length === 8,
     checkEvent: [GAME_EVENT.INFINITY_CHALLENGE_COMPLETED, GAME_EVENT.REALITY_RESET_AFTER],
+    get reward() { return `You can now buy max Antimatter Galaxies.`},
   },
   {
     id: 83,

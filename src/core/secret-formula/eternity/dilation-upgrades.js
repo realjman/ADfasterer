@@ -193,4 +193,10 @@ export const dilationUpgrades = {
     effect: () => 1e9 ** Math.min((Math.max(player.eternityPoints.log10() - 1500, 0) / 2500) ** 1.2, 1),
     formatEffect: value => formatX(value, 2, 2)
   },
+  epGen: {
+    id: 16,
+    cost: 1e18,
+    description: () => `Generate ${formatPercents(0.001, 1)} of highest peaked EP (resets on reality) every second`,
+    effect: 0.001,
+  },
 };

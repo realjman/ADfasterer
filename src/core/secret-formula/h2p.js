@@ -47,7 +47,7 @@ As the mod name, almost all mechanics are speeded up by ${formatX(globalSpeedFac
 To be separated from the in-game speed change mechanic, 'real/game real/game time' means
 this timer doesn't/does count speed up from this mod and doesn't/does count in-game speed change.<br>
 <br>
-This was a hilarious idea from me to make the game even faster, but you should go play the original ADfaster here: https://wyxkk.github.io/ADfaster/<br>
+This was a hilarious idea from me to make the game even faster, but you should go play the original ADfaster <a href="https://WYXkk.github.io/ADfaster">here</a>.<br>
 <br>
 To make the game run normally and still balanced in some way, some mechanics are not speeded up
 ${player.blackHole[0].unlocked||player.records.fullGameCompletions>0?"or speeded up by a lower factor":""}:<br>
@@ -84,7 +84,7 @@ ${Laitela.isUnlocked||player.records.fullGameCompletions>0?`
 `:""}
 ${Pelle.isDoomed||player.records.fullGameCompletions>0?`
 - In Doomed Reality, the global speed factor is square-rooted as ${formatX(Math.pow(globalSpeedFactor,1/2))}.<br>
-- Recursion max requirement is extended to ${format("1e6000")}<br>
+- Recursion max requirement is extended to ${format("1e8000")}<br>
 `:""}
 ${Achievement(188).isUnlocked||player.records.fullGameCompletions>0?`
 - The ending animation is not speeded up.<br>
@@ -96,6 +96,7 @@ ${Achievement(188).isUnlocked||player.records.fullGameCompletions>0?"":
 Also, there are some extra buffs to the game.<br>
 ${PlayerProgress.infinityUnlocked()||player.records.fullGameCompletions>0?`
 - IC5 is free, literally.<br>
+- Buy max galaxies is moved to Achievement 82.<br>
 `:""}
 ${Autobuyer.bigCrunch.hasMaxedInterval||PlayerProgress.eternityUnlocked()?`
 - The infinity generating break infinity upgrade counts the boost from achievement 87 and time study 32.<br>
@@ -106,12 +107,13 @@ ${PlayerProgress.eternityUnlocked()||player.records.fullGameCompletions>0?`
 - Some more TS buffs.<br>
 - Eternity Challenges are seperately instead of you having to do it to progress except for EC10.<br>
 - Instantly unlock bulk ECs.<br>
+- You can unlock EP gen on dilation.<br>
 `:""}
 ${PlayerProgress.realityUnlocked()||player.records.fullGameCompletions>0?`
 - Realities are always simuated +${format(49)}× (additive with other amplify mutipliers).<br>
 - You gain so much perk points on your first reality that you can buy every single perk upgrades.<br>
 - The Automator is unlocked upon your first Reality and it's ${format(10)} times faster.<br>
-- Glyph count is now at a range from ${format(6)} to ${format(8)}. (I know this is heavily unbalanced but this is tend to be a joke project anyways.)<br>
+- Glyph count is now at a range from ${format(6)} to ${format(8)}.<br>
 - Teresa's RM pour RM multiplier is heavily boosted.<br>
 - Teresa's Reality reward is also heavily boosted.<br>
 - "Shutter Glyph" is nerfed.<br>

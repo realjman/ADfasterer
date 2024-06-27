@@ -1,4 +1,5 @@
 import { DC } from "./constants";
+import { TimeStudy } from "./time-studies/normal-time-study";
 
 /**
  * @abstract
@@ -21,7 +22,7 @@ export class TimeTheoremPurchaseType {
   */
   get currency() { throw new NotImplementedError(); }
 
-  get cost() { return this.costBase.times(this.costIncrement.pow(this.amount)); }
+  get cost() { return this.costBase.times(this.costIncrement.pow(this.amount)).dividedByEffectOf(TimeStudy(40)); }
 
   /**
    * @abstract
@@ -82,7 +83,7 @@ TimeTheoremPurchaseType.am = new class extends TimeTheoremPurchaseType {
 
   get currency() { return Currency.antimatter; }
   get costBase() { return DC.E20000; }
-  get costIncrement() { return DC.E20000; }
+  get costIncrement() { return DC.E20000.dividedByEffectOf(TimeStudy(40)); }
 }();
 
 TimeTheoremPurchaseType.ip = new class extends TimeTheoremPurchaseType {
@@ -91,7 +92,7 @@ TimeTheoremPurchaseType.ip = new class extends TimeTheoremPurchaseType {
 
   get currency() { return Currency.infinityPoints; }
   get costBase() { return DC.D1; }
-  get costIncrement() { return DC.E100; }
+  get costIncrement() { return DC.E100.dividedByEffectOf(TimeStudy(40)); }
 }();
 
 TimeTheoremPurchaseType.ep = new class extends TimeTheoremPurchaseType {
@@ -104,7 +105,7 @@ TimeTheoremPurchaseType.ep = new class extends TimeTheoremPurchaseType {
 
   bulkCost(amount) {
     if (Perk.ttFree.canBeApplied) return this.cost.times(this.costIncrement.pow(amount - 1));
-    return this.costIncrement.pow(amount + this.amount).subtract(this.cost);
+    return this.costIncrement.pow(amount + this.amount).subtract(this.cost).dividedByEffectOf(TimeStudy(40));
   }
 }();
 

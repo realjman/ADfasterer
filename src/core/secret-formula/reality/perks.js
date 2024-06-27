@@ -175,9 +175,9 @@ export const perks = {
   },
   autounlockDilation3: {
     id: 44,
-    label: "ATT",
+    label: "DU3",
     family: PERK_FAMILY.DILATION,
-    description: "Automatically purchase the passive Time Theorem generation Dilation Upgrade once you can afford it.",
+    description: "After unlocking Dilation, automatically unlock the forth row of Dilation Upgrades for free.",
     automatorPoints: 5,
     shortDescription: () => "Auto-purchase TT generation",
     layoutPosList: [124289, 82601, 79002, 79396, 80206, 72282],

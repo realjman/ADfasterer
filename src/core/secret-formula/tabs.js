@@ -496,5 +496,23 @@ export const tabs = [
         hidable: true
       }
     ]
-  }
+  },
+  {
+    key: "gameCompletions",
+    name: "Completions",
+    hideAt: 3,
+    condition: () => player.records.fullGameCompletions > 0,
+    id: 11,
+    hidable: true,
+    subtabs: [
+      {
+        key: "gameCompletions",
+        name: "Completions",
+        symbol: "∞",
+        component: "CompletionsTab",
+        id: 0,
+        hidable: true
+      }
+    ]
+  },
 ];

@@ -23,7 +23,7 @@ export class DilationTimeStudyState extends TimeStudyState {
   }
 
   get totalTimeTheoremRequirement() {
-    return this.id === 1 ? 12900 : 0;
+    return this.id === 1 ? 13400 : 0;
   }
 
   purchase(quiet = false) {
@@ -38,6 +38,9 @@ export class DilationTimeStudyState extends TimeStudyState {
       }
       if (Perk.autounlockDilation2.canBeApplied) {
         for (const id of [7, 8, 9]) player.dilation.upgrades.add(id);
+      }
+      if (Perk.autounlockDilation3.canBeApplied) {
+        for (const id of [10, 16]) player.dilation.upgrades.add(id);
       }
       if (!Pelle.isDoomed) Currency.tachyonParticles.bumpTo(Perk.startTP.effectOrDefault(0));
       if (Ra.unlocks.unlockDilationStartingTP.canBeApplied && !isInCelestialReality() && !Pelle.isDoomed) {

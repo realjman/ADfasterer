@@ -140,7 +140,7 @@ export function manualRequestGalaxyReset(bulk) {
     return;
   }
   if (player.options.confirmations.antimatterGalaxy) {
-    Modal.antimatterGalaxy.show({ bulk: bulk && EternityMilestone.autobuyMaxGalaxies.isReached });
+    Modal.antimatterGalaxy.show({ bulk: bulk && Achievement(82).isUnlocked });
     return;
   }
   requestGalaxyReset(bulk);
@@ -150,7 +150,7 @@ export function manualRequestGalaxyReset(bulk) {
 // to restrict galaxy count for RUPG7's requirement here and nowhere else
 export function requestGalaxyReset(bulk, limit = Number.MAX_VALUE) {
   const restrictedLimit = RealityUpgrade(7).isLockingMechanics ? 1 : limit;
-  if (EternityMilestone.autobuyMaxGalaxies.isReached && bulk) return maxBuyGalaxies(restrictedLimit);
+  if (Achievement(82).isUnlocked && bulk) return maxBuyGalaxies(restrictedLimit);
   if (player.galaxies >= restrictedLimit || !Galaxy.canBeBought || !Galaxy.requirement.isSatisfied) return false;
   Tutorial.turnOffEffect(TUTORIAL_STATE.GALAXY);
   galaxyReset();

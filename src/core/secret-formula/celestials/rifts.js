@@ -28,7 +28,7 @@ export const pelleRifts = {
       {
         resource: "vacuum",
         requirement: 0.04,
-        description: "You can equip a single basic Glyph with decreased level and rarity"
+        description: "You can equip five basic Glyph with decreased level and rarity"
       },
       {
         resource: "vacuum",
@@ -149,15 +149,15 @@ export const pelleRifts = {
     baseEffect: x => `EP formula: log(x)/${formatInt(308)} ➜ log(x)/${formatFloat(308 - x.toNumber(), 2)}`,
     additionalEffects: () => [PelleRifts.recursion.milestones[0], PelleRifts.recursion.milestones[1]],
     strike: () => PelleStrikes.ECs,
-    percentage: totalFill => totalFill.plus(1).log10() ** 0.4 / 6000 ** 0.4,
-    percentageToFill: percentage => Decimal.pow(10, percentage ** 2.5 * 6000).minus(1),
+    percentage: totalFill => totalFill.plus(1).log10() ** 0.4 / 8000 ** 0.4,
+    percentageToFill: percentage => Decimal.pow(10, percentage ** 2.5 * 8000).minus(1),
     effect: totalFill => new Decimal(58 * totalFill.plus(1).log10() ** 0.2 / 4000 ** 0.2),
     currency: () => Currency.eternityPoints,
     galaxyGeneratorThreshold: 1e10,
     milestones: [
       {
         resource: "recursion",
-        requirement: 0.05,
+        requirement: 0.04,
         description: "Dimensional Boosts are more powerful based on EC completions",
         effect: () => Math.max(100 * EternityChallenges.completions ** 2, 1) *
           Math.max(1e4 ** (EternityChallenges.completions - 40), 1),
@@ -165,7 +165,7 @@ export const pelleRifts = {
       },
       {
         resource: "recursion",
-        requirement: 0.075,
+        requirement: 0.06,
         description: "Infinity Dimensions are stronger based on EC completions",
         effect: () => Decimal.pow("1e1500", ((EternityChallenges.completions - 25) / 20) ** 1.7).max(1),
         formatEffect: x => `Infinity Dimensions ${formatX(x)}`

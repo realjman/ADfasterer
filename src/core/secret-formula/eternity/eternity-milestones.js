@@ -55,7 +55,8 @@ export const eternityMilestones = {
   },
   autobuyMaxGalaxies: {
     eternities: 9,
-    reward: "Unlock the buy max Antimatter Galaxies Autobuyer mode"
+    reward: "You unlock nothing, don't bother looking at this.",
+    activeCondition: () => `This used to be buy max Galaxies, but yeah I have zero idea what to put here.`
   },
   unlockReplicanti: {
     eternities: 10,

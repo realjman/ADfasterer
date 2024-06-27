@@ -10,7 +10,7 @@ import { Cloud } from "./core/storage";
 import { supportedBrowsers } from "./supported-browsers";
 
 import Payments from "./core/payments";
-import { Achievement } from "./core/globals";
+import { Achievement, DilationUpgrade } from "./core/globals";
 
 if (GlobalErrorHandler.handled) {
   throw new Error("Initialization failed");
@@ -743,7 +743,6 @@ function applyAutoUnlockPerks() {
   if (!TimeDimension(8).isUnlocked && Perk.autounlockTD.canBeApplied) {
     for (let dim = 5; dim <= 8; ++dim) TimeStudy.timeDimension(dim).purchase();
   }
-  if (Perk.autounlockDilation3.canBeApplied) buyDilationUpgrade(DilationUpgrade.ttGenerator.id);
   if (Perk.autounlockReality.canBeApplied) TimeStudy.reality.purchase(true);
   applyEU2();
 }
@@ -837,8 +836,13 @@ function laitelaBeatText(disabledDim) {
 function applyAutoprestige(diff) {
   Currency.infinityPoints.add(TimeStudy(181).effectOrDefault(0));
 
-  if (TeresaUnlocks.epGen.canBeApplied) {
-    Currency.eternityPoints.add(player.records.thisEternity.bestEPmin.times(DC.D0_01)
+  if (!TeresaUnlocks.epGen.canBeApplied && DilationUpgrade.epGen.isBought) {
+    Currency.eternityPoints.add(player.records.thisEternity.bestEPmin.times(DC.D1).timesEffectOf(DilationUpgrade.epGen)
+      .times(getGameSpeedupFactor() * diff / 1000).timesEffectOf(Ra.unlocks.continuousTTBoost.effects.autoPrestige));
+  }
+
+  if (TeresaUnlocks.epGen.canBeApplied && DilationUpgrade.epGen.isBought) {
+    Currency.eternityPoints.add(player.records.thisEternity.bestEPmin.times(DC.D0_1)
       .times(getGameSpeedupFactor() * diff / 1000).timesEffectOf(Ra.unlocks.continuousTTBoost.effects.autoPrestige));
   }
 
