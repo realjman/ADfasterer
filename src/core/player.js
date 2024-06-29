@@ -282,6 +282,8 @@ window.player = {
       [Number.MAX_VALUE, Number.MAX_VALUE, DC.D1, DC.D1, "", DC.D0]),
     recentRealities: Array.range(0, 10).map(() =>
       [Number.MAX_VALUE, Number.MAX_VALUE, DC.D1, 1, "", 0, 0]),
+    recentCompletions: Array.range(0, 10).map(() =>
+      [Number.MAX_VALUE, Number.MAX_VALUE]),
     thisInfinity: {
       time: 0,
       realTime: 0,
@@ -339,6 +341,14 @@ window.player = {
       iMCapSet: [],
       laitelaSet: [],
     },
+    thisCompletion: {
+      time: 0,
+      realTime: 0,
+    },
+    bestCompletion: {
+      time: Number.MAX_VALUE,
+      realTime: Number.MAX_VALUE,
+    }
   },
   speedrun: {
     isUnlocked: false,

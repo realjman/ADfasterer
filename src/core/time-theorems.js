@@ -1,4 +1,5 @@
 import { DC } from "./constants";
+import { Achievement } from "./globals";
 import { TimeStudy } from "./time-studies/normal-time-study";
 
 /**
@@ -83,7 +84,7 @@ TimeTheoremPurchaseType.am = new class extends TimeTheoremPurchaseType {
 
   get currency() { return Currency.antimatter; }
   get costBase() { return DC.E20000; }
-  get costIncrement() { return DC.E20000.dividedByEffectOf(TimeStudy(40)); }
+  get costIncrement() { return DC.E20000.dividedByEffectsOf(TimeStudy(40), Achievement(101)); }
 }();
 
 TimeTheoremPurchaseType.ip = new class extends TimeTheoremPurchaseType {

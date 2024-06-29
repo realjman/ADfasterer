@@ -117,7 +117,7 @@ ${PlayerProgress.realityUnlocked()||player.records.fullGameCompletions>0?`
 - Teresa's RM pour RM multiplier is heavily boosted.<br>
 - Teresa's Reality reward is also heavily boosted.<br>
 - "Shutter Glyph" is nerfed.<br>
-- Rememberance is buffed.<br>
+- Remembrance is buffed.<br>
 - Entropy gain is slightly faster.<br>
 - Game speed during Lai'tela's Reality increases way faster.<br>
 `:""}

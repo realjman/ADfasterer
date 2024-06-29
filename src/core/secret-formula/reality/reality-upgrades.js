@@ -115,15 +115,15 @@ export const realityUpgrades = [
     id: 9,
     cost: 15,
     requirement: () => `Eternity for ${format("1e4000")} Eternity Points using
-      only a single Glyph which must be level ${formatInt(3)}+.`,
+      only 2 Glyphs which must be level ${formatInt(3)}+.`,
     hasFailed: () => {
-      const invalidEquippedGlyphs = Glyphs.activeWithoutCompanion.length > 1 ||
-        (Glyphs.activeWithoutCompanion.length === 1 && Glyphs.activeWithoutCompanion[0].level < 3);
+      const invalidEquippedGlyphs = Glyphs.activeWithoutCompanion.length > 2 ||
+        (Glyphs.activeWithoutCompanion.length === 2 && Glyphs.activeWithoutCompanion[0].level < 3);
       const hasValidGlyphInInventory = Glyphs.inventory.countWhere(g => g && g.level >= 3) > 0;
       return invalidEquippedGlyphs || (Glyphs.activeWithoutCompanion.length === 0 && !hasValidGlyphInInventory);
     },
     checkRequirement: () => Currency.eternityPoints.exponent >= 4000 &&
-      Glyphs.activeWithoutCompanion.length === 1 && Glyphs.activeWithoutCompanion[0].level >= 3,
+      Glyphs.activeWithoutCompanion.length === 2 && Glyphs.activeWithoutCompanion[0].level >= 3,
     checkEvent: GAME_EVENT.ETERNITY_RESET_AFTER,
     canLock: true,
     // There are two locking events - equipping a glyph with too low a level, and equipping a second glyph

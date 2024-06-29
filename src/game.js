@@ -276,6 +276,11 @@ export function addRealityTime(time, realTime, rm, level, realities, ampFactor, 
     realities, reality, level, shards * ampFactor, projIM]);
 }
 
+export function addCompletionTime(time, realTime) {
+  player.records.recentCompletions.pop();
+  player.records.recentCompletions.unshift[time / getGlobalSpeedFactor(), realTime]
+}
+
 export function gainedInfinities() {
   if (EternityChallenge(4).isRunning || Pelle.isDisabled("InfinitiedMults")) {
     return DC.D1;
@@ -423,6 +428,7 @@ export function realTimeMechanics(realDiff) {
     player.records.thisInfinity.realTime += realDiff;
     player.records.thisEternity.realTime += realDiff;
     player.records.thisReality.realTime += realDiff;
+    player.records.thisCompletion.realTime += realDiff;
     Enslaved.storeRealTime();
     // Most autobuyers will only tick usefully on the very first tick, but this needs to be here in order to allow
     // the autobuyers unaffected by time storage to tick as well
@@ -559,6 +565,8 @@ export function gameLoop(passDiff, options = {}) {
     }
     player.records.thisReality.realTime += realDiff / getGlobalSpeedFactor();
     player.records.thisReality.time += diff;
+    player.records.thisCompletion.realTime += realDiff / getGlobalSpeedFactor();
+    player.records.thisCompletion.time += diff;
   }
 
   DeltaTimeState.update(realDiff, diff);

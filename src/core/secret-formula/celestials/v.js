@@ -68,7 +68,7 @@ export const v = {
       name: "Glyph Knight",
       description: value => `Unlock Reality with at most ${quantifyInt("Glyph", -value)} equipped.`,
       // This achievement has internally negated values since the check is always greater than
-      values: [-5, -4, -3, -2, -1, 0],
+      values: [-7, -6, -5, -4, -3, -2],
       condition: () => V.isRunning && TimeStudy.reality.isBought,
       currentValue: () => -Glyphs.activeWithoutCompanion.length,
       formatRecord: x => (x >= -5 ? formatInt(-x) : "Not reached"),

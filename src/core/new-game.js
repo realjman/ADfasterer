@@ -55,6 +55,7 @@ export const NG = {
     // We don't backup the whole player.reality.automator object because it contains "state",
     // which could lead to some edge cases where it starts when it shouldn't (ie before it's unlocked)
     // It's easier to do something like this to avoid it entirely.
+    const speedrun = player.speedrun;
     const automatorConstants = JSON.stringify(player.reality.automator.constants);
     const automatorConstantSort = JSON.stringify(player.reality.automator.constantSortOrder);
     const automatorScripts = JSON.stringify(player.reality.automator.scripts);
@@ -65,6 +66,7 @@ export const NG = {
     const hasSpeedrun = player.speedrun.isUnlocked;
     const presets = JSON.stringify(player.timestudy.presets);
     const companions = JSON.stringify(Glyphs.allGlyphs.filter(g => g.type === "companion"));
+    const bestTime = Math.min(player.records.bestCompletion.realTime, player.records.thisCompletion.realTime);
     Modal.hideAll();
     Quote.clearAll();
     GameStorage.hardReset();
@@ -78,6 +80,7 @@ export const NG = {
     player.reality.automator.constantSortOrder = JSON.parse(automatorConstantSort);
     player.reality.automator.scripts = JSON.parse(automatorScripts);
     player.records.fullGameCompletions = fullCompletions;
+    player.records.bestCompletion.realTime = bestTime;
     player.records.previousRunRealTime = fullTimePlayed;
     ui.view.newUI = player.options.newUI;
     ui.view.news = player.options.news.enabled;

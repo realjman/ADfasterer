@@ -28,7 +28,7 @@ export const pelleRifts = {
       {
         resource: "vacuum",
         requirement: 0.04,
-        description: "You can equip five basic Glyph with decreased level and rarity"
+        description: "You can equip five basic Glyphs with decreased level and rarity"
       },
       {
         resource: "vacuum",
@@ -157,7 +157,7 @@ export const pelleRifts = {
     milestones: [
       {
         resource: "recursion",
-        requirement: 0.04,
+        requirement: 0.05,
         description: "Dimensional Boosts are more powerful based on EC completions",
         effect: () => Math.max(100 * EternityChallenges.completions ** 2, 1) *
           Math.max(1e4 ** (EternityChallenges.completions - 40), 1),
@@ -165,7 +165,7 @@ export const pelleRifts = {
       },
       {
         resource: "recursion",
-        requirement: 0.06,
+        requirement: 0.1,
         description: "Infinity Dimensions are stronger based on EC completions",
         effect: () => Decimal.pow("1e1500", ((EternityChallenges.completions - 25) / 20) ** 1.7).max(1),
         formatEffect: x => `Infinity Dimensions ${formatX(x)}`

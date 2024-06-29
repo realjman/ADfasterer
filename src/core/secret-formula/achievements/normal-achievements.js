@@ -695,7 +695,11 @@ export const normalAchievements = [
     name: "8 nobody got time for that",
     description: "Eternity without buying Antimatter Dimensions 1-7.",
     checkRequirement: () => player.requirementChecks.eternity.onlyAD8,
-    checkEvent: GAME_EVENT.ETERNITY_RESET_BEFORE
+    checkEvent: GAME_EVENT.ETERNITY_RESET_BEFORE,
+    get reward() {
+      return `Divide the antimatter theorem cost increment by ${format(1e18)}`;
+    },
+    effect: 1e18,
   },
   {
     id: 102,

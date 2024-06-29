@@ -287,5 +287,31 @@ export const Time = {
    */
   get infinityChallengeSum() {
     return this.fromMilliseconds(() => GameCache.infinityChallengeTimeSum.value);
-  }
+  },
+
+  /**
+   * @returns {TimeSpan}
+   */
+  get thisCompletion() {
+    return this.fromMilliseconds(() => player.records.thisCompletion.time);
+  },
+  /**
+   * @param {TimeSpan} timespan
+   */
+  set thisCompletion(timespan) {
+    this.toMilliseconds(timespan, value => player.records.thisCompletion.time = value);
+  },
+
+  /**
+   * @returns {TimeSpan}
+   */
+  get bestCompletionRealTime() {
+    return this.fromMilliseconds(() => player.records.bestCompletion.realTime);
+  },
+  /**
+    * @param {TimeSpan} timespan
+    */
+  set bestCompletionRealTime(timespan) {
+    this.toMilliseconds(timespan, value => player.records.bestCompletion.realTime = value);
+  },
 };
