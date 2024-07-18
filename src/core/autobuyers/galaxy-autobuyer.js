@@ -1,4 +1,4 @@
-import { Achievement } from "../globals";
+import { Achievement, EternityMilestone } from "../globals";
 import { UpgradeableAutobuyerState } from "./autobuyer";
 
 export class GalaxyAutobuyerState extends UpgradeableAutobuyerState {
@@ -48,7 +48,7 @@ export class GalaxyAutobuyerState extends UpgradeableAutobuyerState {
   }
 
   get isBuyMaxUnlocked() {
-    return Achievement(82).isUnlocked;
+    return (Achievement(82).isUnlocked && !Pelle.isDoomed) || (Pelle.isDoomed && EternityMilestone.autobuyMaxGalaxies.isReached);
   }
 
   get interval() {

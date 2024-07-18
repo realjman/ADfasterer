@@ -40,7 +40,7 @@ export default {
     :style="style"
   >
     <h2>
-      Reset the entire game, but keep Automator Scripts, Study Presets, Secret Themes, Secret Achievements, Options,
+      everything goes bye bye until you get here again, but keep Automator Scripts, Study Presets, Secret Themes, Secret Achievements, Options,
       and Companion Glyph.
     </h2>
     <h3>You can use the button in the top-right to view the game as it is right now.</h3>
@@ -49,7 +49,7 @@ export default {
         class="c-new-game-button"
         @click="startNewGame"
       >
-        Start over?
+        everything matters again. (Start over)
       </button>
     </div>
     <br>
