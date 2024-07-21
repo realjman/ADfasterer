@@ -62,7 +62,9 @@ export default {
         "o-primary-btn--charged-respec-active": this.disCharge
       };
     },
-    offlineIpUpgrade: () => InfinityUpgrade.ipOffline
+    offlineIpUpgrade: () => InfinityUpgrade.ipOffline,
+    skipReset5Upgrade: () => InfinityUpgrade.skipReset5,
+    resetBoost2Upgrade: () => InfinityUpgrade.resetBoost2
   },
   watch: {
     disCharge(newValue) {
@@ -164,10 +166,18 @@ export default {
       v-if="bottomRowUnlocked"
       class="l-infinity-upgrades-bottom-row"
     >
+      <InfinityUpgradeButton
+        :upgrade="resetBoost2Upgrade"
+        :class="btnClassObject(-1)"
+      />
       <IpMultiplierButton class="l-infinity-upgrades-tab__mult-btn" />
       <InfinityUpgradeButton
         :upgrade="offlineIpUpgrade"
         :class="btnClassObject(1)"
+      />
+      <InfinityUpgradeButton
+        :upgrade="skipReset5Upgrade"
+        :class="btnClassObject(2)"
       />
     </div>
     <div v-if="eternityUnlocked && bottomRowUnlocked">

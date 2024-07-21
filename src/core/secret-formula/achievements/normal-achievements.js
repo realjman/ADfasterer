@@ -208,7 +208,7 @@ export const normalAchievements = [
       GAME_EVENT.REALITY_UPGRADE_TEN_BOUGHT
     ],
     get reward() {
-      return `Unlock two new Infinity Upgrades- ${formatX(2)} IP multiplier and offline IP generation.`;
+      return `Unlock four new Infinity Upgrades- ${formatX(2)} IP multiplier, offline IP generation, decrease DimBoost and AG requirement and start with 5 DimBoost.`;
     },
   },
   {

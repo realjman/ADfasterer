@@ -1,3 +1,5 @@
+import { InfinityUpgrade } from "./infinity-upgrades";
+
 export const GALAXY_TYPE = {
   NORMAL: 0,
   DISTANT: 1,
@@ -56,7 +58,7 @@ export class Galaxy {
       amount *= Math.pow(1.002, galaxies - (Galaxy.remoteStart - 1));
     }
 
-    amount -= Effects.sum(InfinityUpgrade.resetBoost);
+    amount -= Effects.sum(InfinityUpgrade.resetBoost, InfinityUpgrade.resetBoost2);
     if (InfinityChallenge(5).isCompleted) amount -= 1;
 
     if (GlyphAlteration.isAdded("power")) amount *= getSecondaryGlyphEffect("powerpow");

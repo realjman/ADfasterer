@@ -25,7 +25,7 @@ export function playerInfinityUpgradesOnReset() {
       "27Mult", "18Mult", "36Mult", "resetMult",
       "skipReset3", "passiveGen", "45Mult",
       "resetBoost", "galaxyBoost", "skipResetGalaxy",
-      "ipOffline"]
+      "ipOffline","skipReset5","resetBoost2"]
   );
 
   const breakInfinityUpgrades = new Set(
@@ -37,7 +37,7 @@ export function playerInfinityUpgradesOnReset() {
       "totalMult", "currentMult", "postGalaxy",
       "challengeMult", "achievementMult", "infinitiedMult",
       "infinitiedGeneration", "autoBuyerUpgrade", "autobuyMaxDimboosts",
-      "ipOffline"]
+      "ipOffline","skipReset5","resetBoost2"]
   );
 
   if (PelleUpgrade.keepBreakInfinityUpgrades.canBeApplied) {

@@ -138,7 +138,7 @@ export const singularityMilestones = {
     repeat: 10000,
     limit: 4,
     description: "Increased Singularity gain per cap increase",
-    effect: completions => 11 + completions,
+    effect: completions => 10 + Math.pow(2, completions),
     effectFormat: x => `${formatX(x)}`,
     upgradeDirection: LAITELA_UPGRADE_DIRECTION.SELF_BOOST,
   },

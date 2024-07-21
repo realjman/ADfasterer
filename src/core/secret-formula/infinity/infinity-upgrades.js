@@ -87,6 +87,14 @@ export const infinityUpgrades = {
       formatEffect: value => `${formatX(value, 4, 4)}`
     }
   },
+  resetBoost2: {
+    id: "resetBoost2",
+    cost: 1000,
+    checkRequirement: () => InfinityUpgrade.resetBoost.isBought,
+    description: () =>
+      `Decrease the number of Dimensions needed again for Dimension Boosts and Antimatter Galaxies by ${formatInt(9)}`,
+    effect: 9,
+  },
   buy10Mult: {
     id: "dimMult",
     cost: 1,
@@ -231,5 +239,12 @@ export const infinityUpgrades = {
     effect: () => (player.IPMultPurchases >= 3300000 ? DC.E1E6 : DC.D2.pow(player.IPMultPurchases)),
     cap: () => Effarig.eternityCap ?? DC.E1E6,
     formatEffect: value => formatX(value, 2, 2),
-  }
+  },
+  skipReset5: {
+    id: "skipReset5",
+    cost: 1000,
+    checkRequirement: () => InfinityUpgrade.skipResetGalaxy.isBought,
+    description: () =>
+      `Start every reset with ${formatInt(5)} Dimension Boosts, automatically unlocking the Dimensional Sacrifice.`,
+  },
 };

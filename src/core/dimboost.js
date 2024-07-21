@@ -1,4 +1,5 @@
 import { DC } from "./constants";
+import { InfinityUpgrade } from "./infinity-upgrades";
 
 class DimBoostRequirement {
   constructor(tier, amount) {
@@ -113,7 +114,7 @@ export class DimBoost {
       amount += Math.pow(targetResets - 1, 3) + targetResets - 1;
     }
 
-    amount -= Effects.sum(InfinityUpgrade.resetBoost);
+    amount -= Effects.sum(InfinityUpgrade.resetBoost, InfinityUpgrade.resetBoost2);
     if (InfinityChallenge(5).isCompleted) amount -= 1;
 
     amount *= InfinityUpgrade.resetBoost.chargedEffect.effectOrDefault(1);
@@ -165,6 +166,7 @@ export class DimBoost {
   }
 
   static get startingDimensionBoosts() {
+    if (InfinityUpgrade.skipReset5.isBought) return 5;
     if (InfinityUpgrade.skipResetGalaxy.isBought) return 4;
     if (InfinityUpgrade.skipReset3.isBought) return 3;
     if (InfinityUpgrade.skipReset2.isBought) return 2;
@@ -203,7 +205,8 @@ export function softReset(tempBulk, forcedADReset = false, forcedAMReset = false
 export function skipResetsIfPossible(enteringAntimatterChallenge) {
   if (enteringAntimatterChallenge || Player.isInAntimatterChallenge) return;
   if (InfinityUpgrade.skipResetGalaxy.isBought && player.dimensionBoosts < 4) {
-    player.dimensionBoosts = 4;
+    if (InfinityUpgrade.skipReset5.isBought) player.dimensionBoosts = 5;
+    else player.dimensionBoosts = 4;
     if (player.galaxies === 0) player.galaxies = 1;
   } else if (InfinityUpgrade.skipReset3.isBought && player.dimensionBoosts < 3) player.dimensionBoosts = 3;
   else if (InfinityUpgrade.skipReset2.isBought && player.dimensionBoosts < 2) player.dimensionBoosts = 2;
