@@ -102,7 +102,7 @@ export const normalTimeStudies = [
     cost: 8,
     requirement: [181],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: () => `Divide Time Theorems cost and AM & IP TT cost increment by ${format(100)} (Not studies)`,
+    description: () => `Divide Time Theorems cost and AM & IP TT cost increment and EP TT cost by ${format(100)} (Not studies)`,
     effect: 100
   },
   {

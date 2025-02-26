@@ -1,5 +1,4 @@
 import { DC } from "./constants";
-import { Achievement } from "./globals";
 import { TimeStudy } from "./time-studies/normal-time-study";
 
 /**
