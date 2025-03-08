@@ -67,7 +67,7 @@ export const NG = {
     const presets = JSON.stringify(player.timestudy.presets);
     const companions = JSON.stringify(Glyphs.allGlyphs.filter(g => g.type === "companion"));
     const bestTime = Math.min(player.records.bestCompletion.realTime, player.records.thisCompletion.realTime);
-    addCompletionTime(player.records.totalTimePlayed, player.records.realTimePlayed);
+    if (player.speedrun.hasStarted) addCompletionTime(player.records.totalTimePlayed, player.records.realTimePlayed);
     const lastcomps = JSON.stringify(player.records.recentCompletions);
     Modal.hideAll();
     Quote.clearAll();
