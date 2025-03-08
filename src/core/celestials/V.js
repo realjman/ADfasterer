@@ -1,4 +1,5 @@
 import { BitUpgradeState, GameMechanicState } from "../game-mechanics";
+import { Achievement } from "../globals";
 import { GameDatabase } from "../secret-formula/game-database";
 
 import { SpeedrunMilestones } from "../speedrun";
@@ -179,6 +180,9 @@ export const V = {
   unlockCelestial() {
     player.celestials.v.unlockBits |= (1 << VUnlocks.vAchievementUnlock.id);
     GameUI.notify.success("You have unlocked V, The Celestial Of Achievements!", 10000);
+    Achievement(153).unlock()
+    Achievement(154).unlock()
+    Achievement(156).unlock()
     V.quotes.unlock.show();
   },
   initializeRun() {

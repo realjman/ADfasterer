@@ -50,20 +50,20 @@ this timer doesn't/does count speed up from this mod and doesn't/does count in-g
 This was a hilarious idea from me to make the game even faster, but you should go play the original ADfaster <a href="https://WYXkk.github.io/ADfaster">here</a>.<br>
 <br>
 To make the game run normally and still balanced in some way, some mechanics are not speeded up
-${player.blackHole[0].unlocked||player.records.fullGameCompletions>0?"or speeded up by a lower factor":""}:<br>
-${player.speedrun.isUnlocked?`
+${player.blackHole[0].unlocked || player.records.fullGameCompletions>0?"or speeded up by a lower factor":""}:<br>
+${player.speedrun.isUnlocked ? `
 - Speedrun timer is not speeded up.<br>
-`:""}
+` : ""}
 - News scrolling is not speeded up.<br>
 - Playtime tracking (real time) is not speeded up.<br>
 - Autobuyers are not speeded up.<br>
 - The timers of requirements of achievements are not speeded up unless specified.<br>
 - The timers of achievement rewards that drops over time are not speeded up.<br>
-${PlayerProgress.infinityUnlocked()?`
+${PlayerProgress.infinityUnlocked() ? `
 - The timers that record the fastest completion of challenges or prestiges are not speeded up.<br>
 - The normal matter appears in some challenges is not speeded up.<br>
 `:""}
-${Autobuyer.bigCrunch.hasMaxedInterval||PlayerProgress.eternityUnlocked()||player.records.fullGameCompletions>0?`
+${Autobuyer.bigCrunch.hasMaxedInterval || PlayerProgress.eternityUnlocked()||player.records.fullGameCompletions>0?`
 - The production drop in Infinity Challenge 8 is not speeded up.<br>
 `:""}
 ${PlayerProgress.eternityUnlocked()||player.records.fullGameCompletions>0?`
@@ -95,13 +95,15 @@ ${Achievement(188).isUnlocked||player.records.fullGameCompletions>0?"":
 <br>
 Also, there are some extra buffs to the game.<br>
 ${PlayerProgress.infinityUnlocked()||player.records.fullGameCompletions>0?`
+- Offline IP generator now works online. (Taken from Expeditious)<br>
 - IC5 is free, literally.<br>
 - Buy max galaxies is moved to Achievement 82.<br>
+- Replicanti cap is now ${formatPostBreak(Decimal.NUMBER_MAX_VALUE.pow(4))} and post-e308 replicanti scales slower.<br>
 `:""}
 ${Autobuyer.bigCrunch.hasMaxedInterval||PlayerProgress.eternityUnlocked()?`
 - The infinity generating break infinity upgrade counts the boost from achievement 87 and time study 32.<br>
 ${PlayerProgress.eternityUnlocked()||player.records.fullGameCompletions>0?`
-- You instantly unlock all eternity milestones.<br>
+- You gain ${formatX(1_000)} more eternities.<br>
 - Time Study 181 is moved up to row 3 and costs significantly cheaper and does a 100% generation.<br>
 - You don't have any penalties upon reaching the Active, Passive and Idle split tree.<br>
 - Some more TS buffs.<br>
@@ -129,7 +131,7 @@ ${Pelle.isDoomed||player.records.fullGameCompletions>0?`
 ${Pelle.isDoomed||player.records.fullGameCompletions>0?"":
 `More buffs will show here as you reach them.<br>`
 }
-`:"These buffs will show here as you reach them.<br>"
+` : "These buffs will show here as you reach them.<br>"
 }
 <br>
 Visit here often to be clear about what has changed, especially when unlocking a new mechanic.

@@ -17,6 +17,10 @@ if (GlobalErrorHandler.handled) {
 }
 GlobalErrorHandler.cleanStart = true;
 
+export const globalSpeedFactor=1000000;
+export function getFullCompletionBoost() {return Math.clampMax(Math.pow(2, player.records.fullGameCompletions), 1024)}
+export function getGlobalSpeedFactor() {return Pelle.isDoomed?Math.sqrt(globalSpeedFactor * getFullCompletionBoost()):globalSpeedFactor * getFullCompletionBoost();};
+
 export function playerInfinityUpgradesOnReset() {
 
   const infinityUpgrades = new Set(
@@ -276,11 +280,6 @@ export function addRealityTime(time, realTime, rm, level, realities, ampFactor, 
     realities, reality, level, shards * ampFactor, projIM]);
 }
 
-export function addCompletionTime(time, realTime) {
-  player.records.recentCompletions.pop();
-  player.records.recentCompletions.unshift[time / getGlobalSpeedFactor(), realTime]
-}
-
 export function gainedInfinities() {
   if (EternityChallenge(4).isRunning || Pelle.isDisabled("InfinitiedMults")) {
     return DC.D1;
@@ -301,6 +300,11 @@ export function gainedInfinities() {
   infGain = infGain.times(getAdjustedGlyphEffect("infinityinfmult"));
   infGain = infGain.powEffectOf(SingularityMilestone.infinitiedPow);
   return infGain;
+}
+
+export function addCompletionTime(time, realTime) {
+  player.records.recentCompletions.pop();
+  player.records.recentCompletions.unshift([time / getGlobalSpeedFactor(), realTime]);
 }
 
 export function updateRefresh() {
@@ -577,6 +581,10 @@ export function gameLoop(passDiff, options = {}) {
   // behavior of eternity farming.
   preProductionGenerateIP(diff);
 
+  if (InfinityUpgrade.ipOffline.isBought) {
+    Currency.infinityPoints.add(player.records.thisEternity.bestIPMsWithoutMaxAll.times(diff * getGlobalSpeedFactor() / 2));
+  }
+
   if (!Pelle.isDoomed) {
     passivePrestigeGen();
   }
@@ -849,7 +857,7 @@ function applyAutoprestige(diff) {
       .times(getGameSpeedupFactor() * diff / 1000).timesEffectOf(Ra.unlocks.continuousTTBoost.effects.autoPrestige));
   }
 
-  if (TeresaUnlocks.epGen.canBeApplied && DilationUpgrade.epGen.isBought) {
+  if (TeresaUnlocks.epGen.canBeApplied) {
     Currency.eternityPoints.add(player.records.thisEternity.bestEPmin.times(DC.D0_1)
       .times(getGameSpeedupFactor() * diff / 1000).timesEffectOf(Ra.unlocks.continuousTTBoost.effects.autoPrestige));
   }
@@ -970,10 +978,6 @@ export function simulateTime(seconds, real, fast) {
     Currency.infinities.add(infinitiedMilestone);
   } else {
     Currency.eternityPoints.add(getOfflineEPGain(seconds * 1000));
-  }
-
-  if (InfinityUpgrade.ipOffline.isBought && player.options.offlineProgress) {
-    Currency.infinityPoints.add(player.records.thisEternity.bestIPMsWithoutMaxAll.times(seconds * 1000 / 2));
   }
 
   EventHub.dispatch(GAME_EVENT.OFFLINE_CURRENCY_GAINED);

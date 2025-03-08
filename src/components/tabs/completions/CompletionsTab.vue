@@ -3,7 +3,8 @@ import OpenModalHotkeysButton from "@/components/OpenModalHotkeysButton";
 import OptionsButton from "@/components/OptionsButton";
 import PrimaryToggleButton from "@/components/PrimaryToggleButton";
 import SliderComponent from "@/components/SliderComponent";
-import PastPrestigeRunsContainer from "../past-prestige-runs/PastPrestigeRunsContainer";
+import PastCompsContainer from "../completions/PastCompsContainer";
+import { getFullCompletionBoost, getGlobalSpeedFactor, globalSpeedFactor } from "../../../game";
 
 
 export default {
@@ -13,25 +14,26 @@ export default {
     OptionsButton,
     PrimaryToggleButton,
     SliderComponent,
-    PastPrestigeRunsContainer
+    PastCompsContainer
   },
   data() {
     return {
-      completion: {
         gameCompletions: new Decimal(),
-        hasBest: false,
-        best: TimeSpan.zero,
-        this: TimeSpan.zero,
-        thisReal: TimeSpan.zero,
-        bestReal: TimeSpan.zero,
-      },
-      layers: {
         completion: {
-          name: "Completion",
-          plural: "Completions",
-          condition: () => player.records.fullGameCompletions > 0,
-          getRuns: () => player.records.recentCompletions
-        }
+          name: 'Completion',
+          hasBest: false,
+          best: TimeSpan.zero,
+          this: TimeSpan.zero,
+          thisReal: TimeSpan.zero,
+          bestReal: TimeSpan.zero,
+        },
+        completionsBoost: 1,
+        globalSpeedFactor: 1,
+      Lcompletion: {
+        name: "Completion",
+        plural: "Completions",
+        condition: () => player.records.fullGameCompletions > 0,
+        getRuns: () => player.records.recentCompletions
       }
     };
   },
@@ -50,6 +52,8 @@ export default {
       completions.bestReal.setFrom(records.bestCompletion.realTime);
 
       this.gameCompletions = player.records.fullGameCompletions;
+      this.completionsBoost = getFullCompletionBoost()
+      this.globalSpeedFactor = getGlobalSpeedFactor()
     },
   }
 };
@@ -59,7 +63,8 @@ export default {
   <div class="l-completions-tab">
     <br>
     <div class="c-completions-text">
-    You completed the game <span class="c-completions-text_accent">{{ format(gameCompletions) }}</span> time(s).
+    You completed the game <span class="c-completions-text_accent">{{ format(gameCompletions) }}</span> time(s), which gives a <span class="c-completions-text_accent">{{ formatX(completionsBoost) }}</span> to your global speed factor.<br>
+    Your current global speed factor is <span class="c-completions-text_accent">{{ formatX(globalSpeedFactor) }}</span>
     </div>
     <div class="c-stats-tab-title c-stats-tab-general">
         Stuff
@@ -71,8 +76,14 @@ export default {
         You have spent {{ completion.this.toStringShort() }} in this full game run in game time.<br>
         You have spent {{ completion.thisReal.toStringShort() }} in this full game run in real time.
       </div>
-    (That's all you can see here, I have no idea what else to add here. {gci loops real})<br>
-    (this was supposed to be last 10 completions, but i cant get it to work, so rip i suppose)
+    <br>
+    go to settings, saves and import "speedrun" to speedrun
+    <br>
+    im gonna thank glitchyfishys for doing the modified code that i can use
+    <PastCompsContainer
+    :key="Lcompletion.name"
+    :comp="Lcompletion"
+    />
   </div>
 </template>
 

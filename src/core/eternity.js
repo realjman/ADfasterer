@@ -1,6 +1,7 @@
 import { GameMechanicState, SetPurchasableMechanicState } from "./game-mechanics";
 import { DC } from "./constants";
 import FullScreenAnimationHandler from "./full-screen-animation-handler";
+import { Achievement } from "./globals";
 
 function giveEternityRewards(auto) {
   player.records.bestEternity.time = Math.min(player.records.thisEternity.time / getGlobalSpeedFactor(), player.records.bestEternity.time);
@@ -142,6 +143,7 @@ export function eternity(force, auto, specialConditions = {}) {
   PelleStrikes.eternity.trigger();
 
   EventHub.dispatch(GAME_EVENT.ETERNITY_RESET_AFTER);
+  Achievement(71).unlock()
   return true;
 }
 

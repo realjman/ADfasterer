@@ -4,7 +4,7 @@ import { DC } from "./constants";
 // OoM past the cap (default is 308.25 (log10 of 1.8e308), 1.2, Number.MAX_VALUE)
 export const ReplicantiGrowth = {
   get scaleLog10() {
-    return Math.log10(Number.MAX_VALUE);
+    return Math.log10(Number.MAX_VALUE) * 4;
   },
   get scaleFactor() {
     if (PelleStrikes.eternity.hasStrike && Replicanti.amount.gte(DC.E2000)) return 10;
@@ -167,7 +167,7 @@ export function replicantiCap() {
       .pow(TimeStudy(31).isBought ? 120 : 30)
       .clampMin(1)
       .times(Decimal.NUMBER_MAX_VALUE)
-    : Decimal.NUMBER_MAX_VALUE;
+    : Decimal.NUMBER_MAX_VALUE.pow(4);
 }
 
 // eslint-disable-next-line complexity

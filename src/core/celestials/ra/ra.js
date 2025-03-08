@@ -1,4 +1,5 @@
 import { BitUpgradeState, GameMechanicState } from "../../game-mechanics";
+import { Achievement } from "../../globals";
 import { Quotes } from "../quotes";
 
 class RaUnlockState extends BitUpgradeState {
@@ -322,6 +323,7 @@ export const Ra = {
   initializeRun() {
     clearCelestialRuns();
     player.celestials.ra.run = true;
+    Achievement(166).unlock();
     this.quotes.realityEnter.show();
   },
   toggleMode() {

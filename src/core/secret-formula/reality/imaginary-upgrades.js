@@ -95,7 +95,7 @@ export const imaginaryUpgrades = [
     initialCost: 8e9,
     costMult: 2000,
     description: () => `Increase Singularity gain`,
-    effect: 1,
+    effect: 2,
     formatEffect: value => `${formatX(1 + value, 2)}`
   }),
   {
@@ -202,9 +202,9 @@ export const imaginaryUpgrades = [
     id: 18,
     cost: 1.5e10,
     formatCost: x => format(x, 1),
-    requirement: () => `Have ${formatInt(80000)} total Galaxies`,
+    requirement: () => `Have ${formatInt(80000)} total Galaxies and destabilize Lai'tela's Reality in under ${formatInt(30)} seconds ${formatInt(5)} times`,
     hasFailed: () => false,
-    checkRequirement: () => Replicanti.galaxies.total + player.galaxies +
+    checkRequirement: () => Laitela.maxAllowedDimension <= 3 && Replicanti.galaxies.total + player.galaxies +
       player.dilation.totalTachyonGalaxies >= 80000,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
     description: "Unlock the 4th Dark Matter Dimension",

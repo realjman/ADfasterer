@@ -218,9 +218,7 @@ export const infinityUpgrades = {
     id: "ipOffline",
     cost: 1000,
     checkRequirement: () => Achievement(41).isUnlocked,
-    description: () => (player.options.offlineProgress
-      ? `Only while offline, gain ${formatPercents(0.5)} of your best IP/min without using Max All`
-      : "This upgrade would give offline Infinity Point generation, but offline progress is currently disabled"),
+    description: () => `Gain ${formatPercents(0.5)} of your best IP/min without using Max All`,
     effect: () => (player.options.offlineProgress
       ? player.records.thisEternity.bestIPMsWithoutMaxAll.times(TimeSpan.fromMinutes(1).totalMilliseconds / 2)
       : DC.D0),

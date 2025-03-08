@@ -255,7 +255,7 @@ class BlackHoleState {
       if (this.phase >= this.duration) {
         this._data.phase -= this.duration;
         this._data.active = false;
-        if (GameUI.notify.showBlackHoles) {
+        if (GameUI.notify.showBlackHoles && this.dutyCycle < 0.1) {
           GameUI.notify.blackHole(`${this.description(true)} duration ended.`);
         }
       }
@@ -263,7 +263,7 @@ class BlackHoleState {
       this._data.phase -= this.interval;
       this._data.activations++;
       this._data.active = true;
-      if (GameUI.notify.showBlackHoles) {
+      if (GameUI.notify.showBlackHoles && this.dutyCycle < 0.1) {
         GameUI.notify.blackHole(`${this.description(true)} has activated!`);
       }
     }

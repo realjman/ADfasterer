@@ -1,4 +1,5 @@
 import { DC } from "../../constants";
+import { Achievement } from "../../globals";
 import { Quotes } from "../quotes";
 
 import { DarkMatterDimensions } from "./dark-matter-dimension";
@@ -14,6 +15,7 @@ export const Laitela = {
   },
   initializeRun() {
     clearCelestialRuns();
+    Achievement(172).unlock()
     this.celestial.run = true;
   },
   get isRunning() {
