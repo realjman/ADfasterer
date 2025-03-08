@@ -69,7 +69,7 @@ export class TimeStudyTreeLayout {
       );
     } else {
       this.rows.push(
-        normalRow(                       TS(40), TS(41), TS(42)                         ),
+        normalRow(                    TS(40), TS(41), TS(42), null                      ),
         normalRow(                       null,   TS(51),  EC(5)                         )
       );
     }

@@ -63,8 +63,8 @@ export default {
   <div class="l-completions-tab">
     <br>
     <div class="c-completions-text">
-    You completed the game <span class="c-completions-text_accent">{{ format(gameCompletions) }}</span> time(s), which gives a <span class="c-completions-text_accent">{{ formatX(completionsBoost) }}</span> to your global speed factor.<br>
-    Your current global speed factor is <span class="c-completions-text_accent">{{ formatX(globalSpeedFactor) }}</span>
+    You completed the game <span class="c-completions-text_accent">{{ format(gameCompletions) }}</span> time(s), which gives a <span class="c-completions-text_accent">{{ formatX(completionsBoost) }}</span> to your global speed factor. (Capped at {{ formatX(Math.pow(2, 31), 2) }})<br>
+    Your current global speed factor is <span class="c-completions-text_accent">{{ formatX(globalSpeedFactor, 2) }}</span>
     </div>
     <div class="c-stats-tab-title c-stats-tab-general">
         Stuff
