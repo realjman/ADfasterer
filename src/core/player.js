@@ -917,6 +917,7 @@ window.player = {
     invertTTgenDisplay: false,
     autoRealityForFilter: false,
     gamePaused: false,
+    completionsBoostActive: false,
   },
   IAP: {
     enabled: false,

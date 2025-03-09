@@ -18,17 +18,18 @@ export default {
   },
   data() {
     return {
-        gameCompletions: new Decimal(),
-        completion: {
-          name: 'Completion',
-          hasBest: false,
-          best: TimeSpan.zero,
-          this: TimeSpan.zero,
-          thisReal: TimeSpan.zero,
-          bestReal: TimeSpan.zero,
-        },
-        completionsBoost: 1,
-        globalSpeedFactor: 1,
+      gameCompletions: new Decimal(),
+      completion: {
+        name: 'Completion',
+        hasBest: false,
+        best: TimeSpan.zero,
+        this: TimeSpan.zero,
+        thisReal: TimeSpan.zero,
+        bestReal: TimeSpan.zero,
+      },
+      completionsBoost: 1,
+      globalSpeedFactor: 1,
+      completionsBoostActive: false,
       Lcompletion: {
         name: "Completion",
         plural: "Completions",
@@ -36,6 +37,11 @@ export default {
         getRuns: () => player.records.recentCompletions
       }
     };
+  },
+  watch: {
+    completionsBoostActive(newValue) {
+      player.options.completionsBoostActive = newValue;
+    }
   },
   computed: {
     
@@ -45,6 +51,8 @@ export default {
       const records = player.records;
       const completions = this.completion;
       const bestCompletion = records.bestCompletion;
+      const options = player.options;
+      this.completionsBoostActive = options.completionsBoostActive;
       completions.hasBest = bestCompletion.time < 99999999999;
       completions.best.setFrom(bestCompletion.time);
       completions.this.setFrom(records.thisCompletion.time);
@@ -64,7 +72,13 @@ export default {
     <br>
     <div class="c-completions-text">
     You completed the game <span class="c-completions-text_accent">{{ format(gameCompletions) }}</span> time(s), which gives a <span class="c-completions-text_accent">{{ formatX(completionsBoost) }}</span> to your global speed factor. (Capped at {{ formatX(Math.pow(2, 31), 2) }})<br>
-    Your current global speed factor is <span class="c-completions-text_accent">{{ formatX(globalSpeedFactor, 2) }}</span>
+    Your current global speed factor is <span class="c-completions-text_accent">{{ formatX(globalSpeedFactor, 2) }}</span><br>
+    <PrimaryToggleButton
+    v-model="completionsBoostActive"
+    label="Completions Boost:"
+    on="Active"
+    off="Inactive"
+    />
     </div>
     <div class="c-stats-tab-title c-stats-tab-general">
         Stuff

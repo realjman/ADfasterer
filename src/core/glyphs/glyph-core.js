@@ -602,7 +602,7 @@ export const Glyphs = {
       }));
   },
   harshAutoClean() {
-    this.autoClean(1);
+    this.autoClean(2);
   },
   deleteAllUnprotected() {
     this.autoClean(0);

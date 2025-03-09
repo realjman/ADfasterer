@@ -47,7 +47,7 @@ export const NG = {
 
   // Reset the game, but carry over some post-completion stats. We also call this when starting a speedrun, so make sure
   // any stats which are updated due to completion happen in startNewGame() instead of in here
-  restartWithCarryover() {
+  restartWithCarryover(startSpeedrun = false) {
     const backUpOptions = JSON.stringify(player.options);
     // This can't be JSONed as it contains sets
     const secretUnlocks = player.secretUnlocks;
@@ -67,7 +67,7 @@ export const NG = {
     const presets = JSON.stringify(player.timestudy.presets);
     const companions = JSON.stringify(Glyphs.allGlyphs.filter(g => g.type === "companion"));
     const bestTime = Math.min(player.records.bestCompletion.realTime, player.records.thisCompletion.realTime);
-    if (player.speedrun.hasStarted) addCompletionTime(player.records.totalTimePlayed, player.records.realTimePlayed);
+    if (!startSpeedrun) addCompletionTime(player.records.totalTimePlayed, player.records.realTimePlayed);
     const lastcomps = JSON.stringify(player.records.recentCompletions);
     Modal.hideAll();
     Quote.clearAll();

@@ -57,7 +57,7 @@ export default {
       if (player.options.confirmations.autoClean) {
         Modal.glyphPurge.show({ harsh: true });
       } else {
-        Glyphs.autoClean(1);
+        Glyphs.autoClean(2);
       }
     },
     deleteAllUnprotected() {
