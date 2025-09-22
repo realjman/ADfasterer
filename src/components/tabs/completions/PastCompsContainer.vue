@@ -95,7 +95,6 @@ export default {
 
       const cells = [name, this.gameTime(run)];
       cells.push(this.realTime(run));
-      cells.push(this.mods(run));
 
       return cells;
     },
@@ -108,9 +107,6 @@ export default {
     },
     realTime(run) {
       return timeDisplayShort(run[1]);
-    },
-    mods(run) {
-      return run[2];
     },
     toggleShown() {
       player.shownRuns[this.singular] = !player.shownRuns[this.singular];
