@@ -1,3 +1,4 @@
+import { GameCache } from "./cache";
 import { DC } from "./constants";
 
 /**
@@ -144,11 +145,9 @@ export function requestManualReality() {
     Modal.reality.show();
     return;
   }
-  if (GameCache.glyphInventorySpace.value === 0) {
-    Modal.message.show("No available inventory space; free up space by shift-clicking Glyphs to get rid of them.",
-      { closeEvent: GAME_EVENT.GLYPHS_CHANGED });
-    return;
-  }
+  if (GameCache.glyphInventorySpace.value === 0 ) {
+    GameUI.notify.reality("Warning: Out of inventory space. Consider sacrificing some glyphs.");
+  } 
   startManualReality(false);
 }
 
