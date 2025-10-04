@@ -1,6 +1,7 @@
 <script>
 import PrimaryButton from "@/components/PrimaryButton";
 import PrimaryToggleButton from "@/components/PrimaryToggleButton";
+import { Autobuyer } from "../../../core/globals";
 
 export default {
   name: "AutobuyerToggles",
@@ -12,6 +13,8 @@ export default {
     return {
       isDoomed: false,
       autobuyersOn: false,
+      ADbulk: false,
+      ADs: [],
       showContinuum: false,
       disableContinuum: false,
       allAutobuyersDisabled: false
@@ -33,9 +36,23 @@ export default {
     update() {
       this.isDoomed = Pelle.isDoomed;
       this.autobuyersOn = player.auto.autobuyersOn;
+      this.ADbulk = player.auto.antimatterDims.all.filter(auto => auto.mode == 1).length > 0;
+      this.ADs = Autobuyer.antimatterDimension.zeroIndexed;
       this.showContinuum = Laitela.isUnlocked;
       this.disableContinuum = player.auto.disableContinuum;
       this.allAutobuyersDisabled = Autobuyers.unlocked.every(autobuyer => !autobuyer.isActive);
+    },
+    upgMax() {
+      for (const adb of this.ADs) {
+        if (adb.isUnlocked && adb.canBeUpgraded) {
+          if (adb.interval > 100) adb.upgradeInterval();
+          if (adb.interval <= 100 && adb.bulk < 512) adb.upgradeBulk();
+        }
+      }
+      if (Autobuyer.tickspeed.canBeBought && Autobuyer.tickspeed.interval > 100) Autobuyer.tickspeed.upgradeInterval();
+      if (Autobuyer.dimboost.canBeBought && Autobuyer.dimboost.interval > 100) Autobuyer.dimboost.upgradeInterval();
+      if (Autobuyer.galaxy.canBeBought && Autobuyer.galaxy.interval > 100) Autobuyer.galaxy.upgradeInterval();
+      if (Autobuyer.bigCrunch.canBeBought && Autobuyer.bigCrunch.interval > 100) Autobuyer.bigCrunch.upgradeInterval();
     },
     toggleAllAutobuyers() {
       for (const autobuyer of Autobuyers.unlocked) {
@@ -77,6 +94,11 @@ export default {
         class="o-primary-btn--subtab-option"
       />
     </span>
+    <PrimaryButton
+      class="o-primary-btn--subtab-option"
+      @click="upgMax()">
+      Upgrade all AD autobuyers
+    </PrimaryButton>
   </div>
 </template>
 
