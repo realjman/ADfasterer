@@ -50,9 +50,9 @@ export default {
         }
       }
       if (Autobuyer.tickspeed.canBeBought && Autobuyer.tickspeed.interval > 100) Autobuyer.tickspeed.upgradeInterval();
-      if (Autobuyer.dimboost.canBeBought && Autobuyer.dimboost.interval > 100) Autobuyer.dimboost.upgradeInterval();
-      if (Autobuyer.galaxy.canBeBought && Autobuyer.galaxy.interval > 100) Autobuyer.galaxy.upgradeInterval();
-      if (Autobuyer.bigCrunch.canBeBought && Autobuyer.bigCrunch.interval > 100) Autobuyer.bigCrunch.upgradeInterval();
+      if (Autobuyer.dimboost.canBeUpgraded && Autobuyer.dimboost.interval > 100) Autobuyer.dimboost.upgradeInterval();
+      if (Autobuyer.galaxy.canBeUpgraded && Autobuyer.galaxy.interval > 100) Autobuyer.galaxy.upgradeInterval();
+      if (Autobuyer.bigCrunch.canBeUpgraded && Autobuyer.bigCrunch.interval > 100) Autobuyer.bigCrunch.upgradeInterval();
     },
     toggleAllAutobuyers() {
       for (const autobuyer of Autobuyers.unlocked) {
@@ -97,7 +97,7 @@ export default {
     <PrimaryButton
       class="o-primary-btn--subtab-option"
       @click="upgMax()">
-      Upgrade all AD autobuyers
+      Upgrade all autobuyers
     </PrimaryButton>
   </div>
 </template>
