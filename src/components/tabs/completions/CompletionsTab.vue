@@ -35,16 +35,29 @@ export default {
         plural: "Completions",
         condition: () => player.records.fullGameCompletions > 0,
         getRuns: () => player.records.recentCompletions
-      }
+      },
+      effectiveSpeedBoost: 0,
+      speedBoostSlider: 0,
     };
   },
   watch: {
     completionsBoostActive(newValue) {
       player.options.completionsBoostActive = newValue;
+    },
+    effectiveSpeedBoostSlider(newValue) {
+      player.options.effectiveSpeedBoost = newValue;
     }
   },
   computed: {
-    
+    sliderPropsEffectiveSpeedBoost() {
+      return {
+        min: 0,
+        max: this.gameCompletions,
+        interval: 1,
+        width: "100%",
+        tooltip: false
+      };
+    }
   },
   methods: {
     update() {
@@ -53,6 +66,8 @@ export default {
       const bestCompletion = records.bestCompletion;
       const options = player.options;
       this.completionsBoostActive = options.completionsBoostActive;
+      this.effectiveSpeedBoost = options.effectiveSpeedBoost;
+      this.speedBoostSlider = options.effectiveSpeedBoost;
       completions.hasBest = bestCompletion.time < 99999999999;
       completions.best.setFrom(bestCompletion.time);
       completions.this.setFrom(records.thisCompletion.time);
@@ -63,6 +78,10 @@ export default {
       this.completionsBoost = getFullCompletionBoost()
       this.globalSpeedFactor = getGlobalSpeedFactor()
     },
+    adjustSliderValueEffectiveSpeedBoost(value) {
+      this.speedBoostSlider = value;
+      player.options.effectiveSpeedBoost = this.speedBoostSlider;
+    }
   }
 };
 </script>
@@ -79,6 +98,15 @@ export default {
     on="Active"
     off="Inactive"
     />
+    </div>
+    <div class="o-primary-btn o-primary-btn--option o-primary-btn--slider l-options-grid__button">
+      <b>Effective Global Speed Factor boost: {{ formatInt(speedBoostSlider) }}</b>
+      <SliderComponent
+        class="o-primary-btn--slider__slider"
+        v-bind="sliderPropsEffectiveSpeedBoost"
+        :value="speedBoostSlider"
+        @input="adjustSliderValueEffectiveSpeedBoost($event)"
+      />
     </div>
     <div class="c-stats-tab-title c-stats-tab-general">
         Stuff

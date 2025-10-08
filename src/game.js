@@ -18,7 +18,7 @@ if (GlobalErrorHandler.handled) {
 GlobalErrorHandler.cleanStart = true;
 
 export const globalSpeedFactor=1000000;
-export function getFullCompletionBoost() {return player.options.completionsBoostActive ? Math.clampMax(Math.pow(2, player.records.fullGameCompletions), Math.pow(2, 31)) : 1}
+export function getFullCompletionBoost() {return player.options.completionsBoostActive ? Math.clampMax(Math.pow(2, player.options.effectiveSpeedBoost), Math.pow(2, 31)) : 1}
 export function getGlobalSpeedFactor() {return Pelle.isDoomed?Math.sqrt(globalSpeedFactor * getFullCompletionBoost()):globalSpeedFactor * getFullCompletionBoost();};
 
 export function playerInfinityUpgradesOnReset() {

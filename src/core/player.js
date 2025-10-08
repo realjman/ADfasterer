@@ -5,6 +5,7 @@ import { AUTOMATOR_MODE, AUTOMATOR_TYPE } from "./automator/automator-backend";
 import { DC } from "./constants";
 import { deepmergeAll } from "@/utility/deepmerge";
 import { GlyphTypes } from "./glyph-effects";
+import { effectiveBaseGalaxies } from "./tickspeed";
 
 // This is actually reassigned when importing saves
 // eslint-disable-next-line prefer-const
@@ -918,6 +919,7 @@ window.player = {
     autoRealityForFilter: false,
     gamePaused: false,
     completionsBoostActive: false,
+    effectiveSpeedBoost: 0,
   },
   IAP: {
     enabled: false,
