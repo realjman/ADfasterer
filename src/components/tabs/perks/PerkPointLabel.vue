@@ -63,6 +63,9 @@ export default {
       PerkNetwork.currentLayout = PerkLayouts[this.treeLayout];
       PerkNetwork.setPhysics(player.options.perkPhysicsEnabled);
       PerkNetwork.moveToDefaultLayoutPositions(this.treeLayout);
+    },
+    maxPerkUpgrades() {
+      dev.buyAllPerks()
     }
   }
 };
@@ -101,6 +104,11 @@ export default {
         @click="straightenEdges"
       >
         Straighten Edges
+      </PrimaryButton>
+      <PrimaryButton
+        class="o-primary-btn"
+        @click="maxPerkUpgrades">
+        Buy all Perk upgrades
       </PrimaryButton>
     </div>
   </div>
